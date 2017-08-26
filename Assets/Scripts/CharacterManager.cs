@@ -16,16 +16,17 @@ public class CharacterManager : MonoBehaviour
 
     void Awake()
     {
-        for(int i = 0; i < 4; i++)
+        for (int i = 0; i < 4; i++)
         {
             GameObject characterObj = Instantiate(characterPrefab, transform);
+            characterObj.SetActive(true);
             TextMesh buttonTitle = characterObj.GetComponentInChildren<TextMesh>();
-            if(buttonTitle != null)
+            if (buttonTitle != null)
             {
                 buttonTitle.text = titles[i];
             }
         }
-        
+
         var characters = GetComponentsInChildren<Character>();
 
         var characterNum = 0;

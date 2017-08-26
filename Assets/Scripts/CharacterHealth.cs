@@ -17,7 +17,7 @@ public class CharacterHealth : MonoBehaviour
 
     public void Awake()
     {
-        var trigger = gameObject.AddComponent<ObservableTrigger2DTrigger>();
+        var trigger = this.GetComponent<ObservableTrigger2DTrigger>();
         var stayTrigger = trigger.OnTriggerStay2DAsObservable();
 
         trigger
