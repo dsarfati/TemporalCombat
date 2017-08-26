@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
 	void Awake () {
         //grab gamesettings from stream later
         GameSettings gs;
-        gs.numPlayers = 3;
+        gs.numPlayers = 2;
 
 
         for(int i = 0; i < gs.numPlayers; i++)
