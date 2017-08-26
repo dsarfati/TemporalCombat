@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UniRx;
 
 public class LifeCounter : MonoBehaviour {
 
+    public int playerId;
     public int maxLives = 4;
     public GameObject heart;
 
 	// Use this for initialization
 	void Awake () {
         SetLives();
+
+        this.ReceiveAll<DeathEvent>()
+            .Where(de => de.Character.transform.parent.GetComponent<Player>().playerId == playerId)
+            .Subscribe(_ =>
+            {
+                LoseLife();
+            });
+            
 	}
 	
 	// Update is called once per frame
