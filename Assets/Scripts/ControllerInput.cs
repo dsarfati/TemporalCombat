@@ -43,7 +43,11 @@ namespace Assets.Scripts
                     break;
             }
             shadow.Where(i => i > 0).Subscribe(i => _characterManager.ActivateCharacter(i - 1));
-            attack.Subscribe(a => this.Send(new AttackInput()));
+            attack.Where(i => i > 0).Subscribe(a =>
+            {
+                print("attack sent");
+                this.Send(new AttackInput());
+            });
             move.Subscribe(f => this.Send(new MoveInput(f)));
             jump.Subscribe(b => this.Send(new JumpInput()));
 
