@@ -16,16 +16,27 @@ public class CharacterManager : MonoBehaviour
 
     void Awake()
     {
-        for(int i = 0; i < 4; i++)
+        
+    }
+
+    public void Initialize(int x)
+    {
+        GameObject baseSpawn = GameObject.FindGameObjectWithTag("Spawn");
+
+
+        Debug.Log(baseSpawn.name +" Access " + x + " out of " + baseSpawn.transform.childCount);
+        Transform spawnSet = baseSpawn.transform.GetChild(x);
+
+        for (int i = 0; i < 4; i++)
         {
-            GameObject characterObj = Instantiate(characterPrefab, transform);
+            GameObject characterObj = Instantiate(characterPrefab, spawnSet.GetChild(i).position , Quaternion.identity , transform);
             TextMesh buttonTitle = characterObj.GetComponentInChildren<TextMesh>();
-            if(buttonTitle != null)
+            if (buttonTitle != null)
             {
                 buttonTitle.text = titles[i];
             }
         }
-        
+
         var characters = GetComponentsInChildren<Character>();
 
         var characterNum = 0;
@@ -92,5 +103,10 @@ public class CharacterManager : MonoBehaviour
         }
 
         ActivateCharacter(bestCharacter);
+    }
+
+    public void MoveToSpawn()
+    {
+
     }
 }
