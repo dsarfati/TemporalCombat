@@ -6,7 +6,7 @@ using UnityEngine;
 using UniRx;
 using UniRx.Triggers; // need UniRx.Triggers namespace
 
-public class PlayerHealth : MonoBehaviour
+public class CharacterHealth : MonoBehaviour
 {
     public int invincibilityTime = 1000;
     public int currHealth = 2;
@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
     {
         var trigger = gameObject.AddComponent<ObservableTrigger2DTrigger>();
         var stayTrigger = trigger.OnTriggerStay2DAsObservable();
-            
+
         trigger
             .OnTriggerEnter2DAsObservable()
             .Merge(stayTrigger)
@@ -35,5 +35,9 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         currHealth -= dmg;
+
+        this.Send(new DeathEvent(this.GetComponent<Character>()));
+
+        Destroy(this.gameObject);
     }
 }
