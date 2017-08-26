@@ -14,7 +14,7 @@ public static class EventPipe
     static EventPipe()
     {
         //Load the previous settings to enable or disable logging
-        Logging = true;
+        Logging = false;
     }
 
     static ISubject<Message> Pipe<T>() where T : struct

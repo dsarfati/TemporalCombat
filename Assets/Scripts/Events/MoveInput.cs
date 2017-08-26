@@ -8,3 +8,7 @@ public struct MoveInput
         XValue = xValue;
     }
 }
+
+public struct JumpInput
+{
+}

@@ -5,26 +5,41 @@ using UniRx;
 
 public class Character : MonoBehaviour
 {
-    private bool _isActive = false;
+    public bool IsActive { get; private set; }
 
     void Awake()
     {
-        this.transform.parent.Receive<MoveInput>().Where(_ => _isActive).Subscribe(input =>
+        var rigidBody = GetComponent<Rigidbody2D>();
+        var collider = GetComponent<Collider2D>();
+
+        var startingConstraints = rigidBody.constraints;
+
+        this.Receive<CharacterActivated>()
+        .Select(x => x.IsActivated)
+        .DistinctUntilChanged().Subscribe(isActive =>
         {
-            print("Received input");
-            this.transform.position = new Vector3(this.transform.position.x + input.XValue * Time.deltaTime, 0, 0);
+            if (isActive)
+            {
+                collider.enabled = true;
+                rigidBody.constraints = startingConstraints;
+            }
+            else
+            {
+                rigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
+                collider.enabled = false;
+            }
         }).AddTo(this);
     }
 
     public void Activate()
     {
-        _isActive = true;
+        IsActive = true;
         this.Send(new CharacterActivated(true));
     }
 
     public void Deactivate()
     {
-        _isActive = false;
+        IsActive = false;
         this.Send(new CharacterActivated(false));
     }
 }

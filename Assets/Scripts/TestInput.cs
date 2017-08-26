@@ -31,9 +31,15 @@ public class TestInput : MonoBehaviour
             _characterManager.ActivateCharacter(3);
         }
 
+        //Movement
         if (Input.GetKey(KeyCode.RightArrow))
             this.Send(new MoveInput(1));
         if (Input.GetKey(KeyCode.LeftArrow))
             this.Send(new MoveInput(-1));
+
+        //Jump
+        if (Input.GetKeyDown(KeyCode.Space))
+            this.Send(new JumpInput());
+
     }
 }

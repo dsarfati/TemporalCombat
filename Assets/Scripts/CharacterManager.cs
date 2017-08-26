@@ -29,13 +29,17 @@ public class CharacterManager : MonoBehaviour
             return;
         }
 
+        var newCharacter = _characters[characterNum];
+
+        if (newCharacter == _activeCharacter)
+            return;
+
         if (_activeCharacter != null)
         {
             _activeCharacter.Deactivate();
         }
 
-        var character = _characters[characterNum];
-        _activeCharacter = character;
-        character.Activate();
+        _activeCharacter = newCharacter;
+        newCharacter.Activate();
     }
 }
