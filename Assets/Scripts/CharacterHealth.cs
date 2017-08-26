@@ -36,8 +36,12 @@ public class CharacterHealth : MonoBehaviour
     {
         currHealth -= dmg;
 
-        this.Send(new DeathEvent(this.GetComponent<Character>()));
+        if(isDead)
+        {
+            this.Send(new DeathEvent(this.GetComponent<Character>()));
 
-        Destroy(this.gameObject);
+            Destroy(this.gameObject);
+        }
+        
     }
 }

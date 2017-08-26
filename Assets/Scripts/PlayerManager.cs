@@ -3,22 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
-
-    //return false = at least one character alive
+    
     public bool CheckAlive()
     {
-        foreach (Transform child in transform)
-        {
-            CharacterHealth shade = child.GetComponent<CharacterHealth>();
-            if (shade != null)
-            {
-                if (!shade.isDead)
-                {
-                    return false;
-                }
-            }
+        CharacterHealth[] healths = GetComponentsInChildren<CharacterHealth>();
 
+        //no characters left
+        if(healths.Length == 0)
+        {
+            return false;
         }
-        return true;
+
+        foreach(var health in healths)
+        {
+            if(!health.isDead)
+            {
+                return true;
+            }
+        }
+        return false;
+
+
+        //foreach (Transform child in transform)
+        //{
+        //    CharacterHealth shade = child.GetComponent<CharacterHealth>();
+        //    if (shade != null)
+        //    {
+        //        if (!shade.isDead)
+        //        {
+        //            return false;
+        //        }
+        //    }
+
+        //}
+        //return true;
     }
 }

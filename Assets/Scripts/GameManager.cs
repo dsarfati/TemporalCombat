@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,6 +34,12 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        this.ReceiveAll<DeathEvent>()
+            .Subscribe(_ =>
+            {
+                CheckGameOver();
+            });
+
 
     }
 
@@ -55,6 +62,30 @@ public class GameManager : MonoBehaviour
             newPlayer.GetComponent<CharacterManager>().Initialize(i);
         }
 
+    }
+
+    private void CheckGameOver()
+    {
+        Debug.Log("CHGECKING GAME OVER");
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        int numPlayersAlive = 0;
+        foreach(var player in players)
+        {
+            if(player.GetComponent<PlayerManager>().CheckAlive())
+            {
+                numPlayersAlive++;
+            }
+        }
+
+        if(numPlayersAlive <= 1)
+        {
+            RunGameOverSequence();
+        }
+    }
+
+    private void RunGameOverSequence()
+    {
+        Debug.Log("GAME OVER ASDJFKLSDJFFDJSKLDSFKJLDSFJLK");
     }
 
 }
