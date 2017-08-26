@@ -12,11 +12,14 @@ namespace Assets.Scripts
         public List<Sprite> Characters;
         public Image Display;
         public int PlayerNumber;
+        public GameObject Prompt;
+        public GameObject Ready;
         [SerializeField]
         private int currCharacter;
 
         private void Start()
         {
+            print("player select window " + PlayerNumber + " start ran");
             var control = InputHandlerSingleton.Instance.Player1Move;
             var isReady = psMan.Player1Status.StartWith(0);
             switch (PlayerNumber)
@@ -34,7 +37,11 @@ namespace Assets.Scripts
                     isReady = psMan.Player4Status.StartWith(0);
                     break;
             }
-            isReady.Subscribe(i => print(i));
+            isReady.DelayFrame(1).Subscribe(i =>
+            {
+                Prompt.SetActive(i == 0);
+                Ready.SetActive(i == 2);
+            });
             control.DelayFrame(1)
                 .Select(i => i > 0 ? 1 : i < 0 ? -1 : 0)
                 .DistinctUntilChanged()

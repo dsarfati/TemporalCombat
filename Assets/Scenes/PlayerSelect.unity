@@ -334,6 +334,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f51f42c5da19645c1b48998b5a4ac820, type: 3}
   Display: {fileID: 1884201245}
   PlayerNumber: 2
+  Prompt: {fileID: 337449825}
+  Ready: {fileID: 1945535709}
   currCharacter: 0
 --- !u!114 &176826780
 MonoBehaviour:
@@ -1681,6 +1683,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f51f42c5da19645c1b48998b5a4ac820, type: 3}
   Display: {fileID: 1059242793}
   PlayerNumber: 0
+  Prompt: {fileID: 1498671465}
+  Ready: {fileID: 2084987105}
   currCharacter: 0
 --- !u!1 &1228415486
 GameObject:
@@ -2399,6 +2403,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f51f42c5da19645c1b48998b5a4ac820, type: 3}
   Display: {fileID: 1140306634}
   PlayerNumber: 1
+  Prompt: {fileID: 1228415486}
+  Ready: {fileID: 579129475}
   currCharacter: 0
 --- !u!114 &1640116939
 MonoBehaviour:
@@ -3168,6 +3174,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f51f42c5da19645c1b48998b5a4ac820, type: 3}
   Display: {fileID: 1077856463}
   PlayerNumber: 3
+  Prompt: {fileID: 13523628}
+  Ready: {fileID: 1995403918}
   currCharacter: 0
 --- !u!114 &2119484260
 MonoBehaviour:
