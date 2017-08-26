@@ -42,6 +42,12 @@ public class GameManager : MonoBehaviour
 
         GameObject newPlayer = Instantiate(player);
         newPlayer.name = "Player " + i;
+        Player playerScript = newPlayer.GetComponent<Player>();
+        if(playerScript != null)
+        {
+            playerScript.playerId = i;
+        }
+        
         Assets.Scripts.ControllerInput inputScript = newPlayer.GetComponent<Assets.Scripts.ControllerInput>();
         if (inputScript != null)
         {

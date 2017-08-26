@@ -17,7 +17,7 @@ public class HUDController : MonoBehaviour {
         for(int i = 0; i < x; i++)
         {
             GameObject playerStatsObj = Instantiate(playerStats, transform);
-            LifeCounter counter = GetComponentInChildren<LifeCounter>();
+            LifeCounter counter = playerStatsObj.GetComponentInChildren<LifeCounter>();
             if(counter != null)
             {
                 counter.playerId = i;
