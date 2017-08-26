@@ -15,7 +15,7 @@ public class LifeCounter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.Space))
+		if(Input.GetKeyDown(KeyCode.K))
         {
             Debug.Log("losing life");
             LoseLife();
@@ -35,7 +35,6 @@ public class LifeCounter : MonoBehaviour {
         
         for (int i = transform.childCount - 1; i >= 0; i--)
         {
-            Debug.Log(transform.childCount);
             Transform img = transform.GetChild(i).GetChild(0);
             if (img != null && img.gameObject.activeInHierarchy)
             {
