@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ghost Character
+    uniqueID: 3178501567
+    locked: 0
+  - name: Characters
+    uniqueID: 780814655
+    locked: 0
