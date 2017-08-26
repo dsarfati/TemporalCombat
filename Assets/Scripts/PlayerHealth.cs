@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
@@ -6,7 +8,7 @@ using UniRx.Triggers; // need UniRx.Triggers namespace
 
 public class PlayerHealth : MonoBehaviour
 {
-
+    public int invincibilityTime = 1000;
     public int currHealth = 2;
     public bool isDead
     {
@@ -15,11 +17,18 @@ public class PlayerHealth : MonoBehaviour
 
     public void Awake()
     {
-        gameObject.AddComponent<ObservableTrigger2DTrigger>()
+        var trigger = gameObject.AddComponent<ObservableTrigger2DTrigger>();
+        var stayTrigger = trigger.OnTriggerStay2DAsObservable();
+            
+        trigger
             .OnTriggerEnter2DAsObservable()
+            .Merge(stayTrigger)
+            .Where(coll => coll.gameObject.layer == LayerMask.NameToLayer("Attack")) //in case we use triggers for other things
+            .ThrottleFirst(TimeSpan.FromMilliseconds(invincibilityTime))
             .Subscribe(coll =>
             {
-                print(gameObject.name + " Colliding with " + coll.gameObject.name);
+                Debug.Log(gameObject.name + " Colliding with " + coll.gameObject.name);
+                TakeDamage(1);
             });
     }
 
