@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 371ca68cb1eab4a1ab80c3a065b4ea42
-timeCreated: 1503772500
+timeCreated: 1503779003
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -90,10 +90,10 @@ TextureImporter:
       name: Platform_Right
       rect:
         serializedVersion: 2
-        x: 218
-        y: 403
-        width: 66
-        height: 74
+        x: 219
+        y: 402
+        width: 65
+        height: 75
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -105,9 +105,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 403
+        y: 402
         width: 66
-        height: 74
+        height: 75
       alignment: 3
       pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,7 +121,7 @@ TextureImporter:
         x: 85
         y: 402
         width: 131
-        height: 74
+        height: 75
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
