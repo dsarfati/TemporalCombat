@@ -12,3 +12,7 @@ public struct MoveInput
 public struct JumpInput
 {
 }
+
+public struct AttackInput
+{
+}

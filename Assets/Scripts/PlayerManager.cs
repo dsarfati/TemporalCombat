@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour {
     {
         foreach (Transform child in transform)
         {
-            PlayerHealth shade = child.GetComponent<PlayerHealth>();
+            CharacterHealth shade = child.GetComponent<CharacterHealth>();
             if (shade != null)
             {
                 if (!shade.isDead)

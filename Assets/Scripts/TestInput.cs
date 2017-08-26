@@ -38,8 +38,12 @@ public class TestInput : MonoBehaviour
             this.Send(new MoveInput(-1));
 
         //Jump
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
             this.Send(new JumpInput());
+
+        //Attack
+        if (Input.GetKeyDown(KeyCode.Space))
+            this.Send(new AttackInput());
 
     }
 }
