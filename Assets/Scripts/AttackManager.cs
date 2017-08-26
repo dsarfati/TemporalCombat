@@ -25,7 +25,10 @@ public class AttackManager : MonoBehaviour
 
         player.transform.Receive<MoveInput>().Where(_ => character.IsActive).Subscribe(m =>
           {
-              transform.localPosition = new Vector2(startPosition * Mathf.Sign(m.XValue), transform.localPosition.y);
+              if(this != null)
+              {
+                  transform.localPosition = new Vector2(startPosition * Mathf.Sign(m.XValue), transform.localPosition.y);
+              }
           }).AddTo(this);
 
         player.transform.Receive<AttackInput>().Where(_ => character.IsActive).Subscribe(_ => AttackStart()).AddTo(this);
