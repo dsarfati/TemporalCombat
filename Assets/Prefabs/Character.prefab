@@ -60,7 +60,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1882240470639932
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +331,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 6
   _jumpSpeed: 300
-  _groundCheck: {fileID: 0}
 --- !u!114 &114212991389803582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -412,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef4488f5295fc4d9db080305d1982c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackFrames: 1
+  _attackFrames: 10
 --- !u!114 &114990305797359754
 MonoBehaviour:
   m_ObjectHideFlags: 1
