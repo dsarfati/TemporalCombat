@@ -327,9 +327,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf5b647ff5d0fbf4b8076758e1a9aae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Characters: []
+  psMan: {fileID: 716688451}
+  Characters:
+  - {fileID: 21300000, guid: f51f42c5da19645c1b48998b5a4ac820, type: 3}
+  - {fileID: 21300000, guid: 63fbaff7723814f7692888f614ac8d7a, type: 3}
+  - {fileID: 21300000, guid: f51f42c5da19645c1b48998b5a4ac820, type: 3}
   Display: {fileID: 1884201245}
   PlayerNumber: 2
+  currCharacter: 0
 --- !u!114 &176826780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,7 +493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.312, y: 0.8181852}
   m_AnchorMax: {x: 0.688, y: 0.93900007}
-  m_AnchoredPosition: {x: -0.3800001, y: 0.15989995}
+  m_AnchoredPosition: {x: -0.3800001, y: 0.15989685}
   m_SizeDelta: {x: -3.7999878, y: 0.19999695}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213134841
@@ -1669,9 +1674,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf5b647ff5d0fbf4b8076758e1a9aae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Characters: []
+  psMan: {fileID: 716688451}
+  Characters:
+  - {fileID: 21300000, guid: f51f42c5da19645c1b48998b5a4ac820, type: 3}
+  - {fileID: 21300000, guid: 63fbaff7723814f7692888f614ac8d7a, type: 3}
+  - {fileID: 21300000, guid: f51f42c5da19645c1b48998b5a4ac820, type: 3}
   Display: {fileID: 1059242793}
   PlayerNumber: 0
+  currCharacter: 0
 --- !u!1 &1228415486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2382,9 +2392,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf5b647ff5d0fbf4b8076758e1a9aae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Characters: []
+  psMan: {fileID: 716688451}
+  Characters:
+  - {fileID: 21300000, guid: f51f42c5da19645c1b48998b5a4ac820, type: 3}
+  - {fileID: 21300000, guid: 63fbaff7723814f7692888f614ac8d7a, type: 3}
+  - {fileID: 21300000, guid: f51f42c5da19645c1b48998b5a4ac820, type: 3}
   Display: {fileID: 1140306634}
   PlayerNumber: 1
+  currCharacter: 0
 --- !u!114 &1640116939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3146,9 +3161,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf5b647ff5d0fbf4b8076758e1a9aae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Characters: []
+  psMan: {fileID: 716688451}
+  Characters:
+  - {fileID: 21300000, guid: f51f42c5da19645c1b48998b5a4ac820, type: 3}
+  - {fileID: 21300000, guid: 63fbaff7723814f7692888f614ac8d7a, type: 3}
+  - {fileID: 21300000, guid: f51f42c5da19645c1b48998b5a4ac820, type: 3}
   Display: {fileID: 1077856463}
   PlayerNumber: 3
+  currCharacter: 0
 --- !u!114 &2119484260
 MonoBehaviour:
   m_ObjectHideFlags: 0

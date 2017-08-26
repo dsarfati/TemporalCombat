@@ -5,10 +5,10 @@ namespace Assets.Scripts
 {
     public class PlayerSelectManager : MonoBehaviour
     {
-        private IObservable<int> Player1Status;
-        private IObservable<int> Player2Status;
-        private IObservable<int> Player3Status;
-        private IObservable<int> Player4Status;
+        internal IObservable<int> Player1Status;
+        internal IObservable<int> Player2Status;
+        internal IObservable<int> Player3Status;
+        internal IObservable<int> Player4Status;
         private IObservable<int> PlayersJoined;
         private IObservable<int> PlayersReady;
 
