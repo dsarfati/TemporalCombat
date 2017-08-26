@@ -22,7 +22,8 @@ public class HUDController : MonoBehaviour {
             Image playerPlacard = playerStatsObj.transform.GetChild(0).GetComponent<Image>();
             if(playerPlacard != null)
             {
-                playerPlacard.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+                Color randColor = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+                playerPlacard.color = randColor;
             }
         }
     }

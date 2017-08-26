@@ -16,9 +16,20 @@ public class CharacterManager : MonoBehaviour
 
     void Awake()
     {
+
+    }
+
+    public void Initialize(int x)
+    {
+        GameObject baseSpawn = GameObject.FindGameObjectWithTag("Spawn");
+
+
+        Debug.Log(baseSpawn.name + " Access " + x + " out of " + baseSpawn.transform.childCount);
+        Transform spawnSet = baseSpawn.transform.GetChild(x);
+
         for (int i = 0; i < 4; i++)
         {
-            GameObject characterObj = Instantiate(characterPrefab, transform);
+            GameObject characterObj = Instantiate(characterPrefab, spawnSet.GetChild(i).position, Quaternion.identity, transform);
             characterObj.SetActive(true);
             TextMesh buttonTitle = characterObj.GetComponentInChildren<TextMesh>();
             if (buttonTitle != null)
@@ -93,5 +104,10 @@ public class CharacterManager : MonoBehaviour
         }
 
         ActivateCharacter(bestCharacter);
+    }
+
+    public void MoveToSpawn()
+    {
+
     }
 }

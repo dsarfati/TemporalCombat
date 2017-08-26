@@ -13,9 +13,8 @@ public class GameManager : MonoBehaviour
     {
         //grab gamesettings from stream later
         GameSettings gs;
-        gs.numPlayers = 2;
-
-
+        gs.numPlayers = 4;
+        
         for (int i = 0; i < gs.numPlayers; i++)
         {
             SpawnPlayer(i);
@@ -40,11 +39,14 @@ public class GameManager : MonoBehaviour
     //TODO: choose spawnpoints from stage
     void SpawnPlayer(int i)
     {
+
         GameObject newPlayer = Instantiate(player);
+        newPlayer.name = "Player " + i;
         Assets.Scripts.ControllerInput inputScript = newPlayer.GetComponent<Assets.Scripts.ControllerInput>();
         if (inputScript != null)
         {
             inputScript.PlayerNumber = i;
+            newPlayer.GetComponent<CharacterManager>().Initialize(i);
         }
 
     }
