@@ -53,13 +53,14 @@ GameObject:
   - component: {fileID: 4621526033557968}
   - component: {fileID: 58969241064882282}
   - component: {fileID: 114782220367122876}
+  - component: {fileID: 114212991389803582}
   m_Layer: 9
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1882240470639932
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +76,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1932295941653450
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,13 +91,15 @@ GameObject:
   - component: {fileID: 70727458382980710}
   - component: {fileID: 114060308655372498}
   - component: {fileID: 114990305797359754}
+  - component: {fileID: 114224261270509900}
+  - component: {fileID: 114233831032616656}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1997053128816338
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +304,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1997053128816338}
-  m_Text: RT
+  m_Text: Blank
   m_OffsetZ: 1
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -328,6 +331,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 6
   _jumpSpeed: 300
+  _groundCheck: {fileID: 0}
+--- !u!114 &114212991389803582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1768866778558126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb219b23cdf4b314f94a27bca3cc8012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114224261270509900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1932295941653450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aad3129752ef804999a880a7b2d72ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114233831032616656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1932295941653450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb219b23cdf4b314f94a27bca3cc8012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114360712552444900
 MonoBehaviour:
   m_ObjectHideFlags: 1

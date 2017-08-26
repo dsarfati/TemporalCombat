@@ -79,8 +79,7 @@ namespace Assets.Scripts
 
         private void Awake()
         {
-            //if (!_instance)
-            //    _instance = this;
+            DontDestroyOnLoad(gameObject);
 
             Player1Attack = this.ObserveEveryValueChanged(_ => Input.GetButton("p1AttackHigh")).Select(h => h ? 1 : 0)
             .Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p1AttackMid"))

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 371ca68cb1eab4a1ab80c3a065b4ea42
-timeCreated: 1503766526
+timeCreated: 1503772500
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -90,12 +90,12 @@ TextureImporter:
       name: Platform_Right
       rect:
         serializedVersion: 2
-        x: 15
-        y: 402
-        width: 74
+        x: 218
+        y: 403
+        width: 66
         height: 74
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -104,12 +104,12 @@ TextureImporter:
       name: Platform_Left
       rect:
         serializedVersion: 2
-        x: 6
-        y: 308
-        width: 74
+        x: 16
+        y: 403
+        width: 66
         height: 74
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 3
+      pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -118,12 +118,12 @@ TextureImporter:
       name: Platform
       rect:
         serializedVersion: 2
-        x: 17
-        y: 226
-        width: 148
+        x: 85
+        y: 402
+        width: 131
         height: 74
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,8 +132,8 @@ TextureImporter:
       name: TextureMap_0
       rect:
         serializedVersion: 2
-        x: 103
-        y: 354
+        x: 297
+        y: 348
         width: 87
         height: 128
       alignment: 0

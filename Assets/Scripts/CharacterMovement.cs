@@ -22,6 +22,8 @@ public class CharacterMovement : MonoBehaviour
     {
         var rigidbody = GetComponent<Rigidbody2D>();
 
+        var jumpCount = 0;
+
         this.transform.parent.Receive<MoveInput>().Where(_ => _isActive).Subscribe(input =>
         {
             rigidbody.velocity = new Vector2(input.XValue * _moveSpeed, rigidbody.velocity.y);
@@ -29,6 +31,18 @@ public class CharacterMovement : MonoBehaviour
 
         this.transform.parent.Receive<JumpInput>().Where(_ => _isActive).Subscribe(_ =>
         {
+            var isGrounded = Physics2D.OverlapPoint(this.transform.position + Vector3.down, LayerMask.NameToLayer("Ground"));
+
+            if (isGrounded != null)
+            {
+                jumpCount = 0;
+            }
+            else if (jumpCount >= 2)
+            {
+                return;
+            }
+
+            jumpCount++;
             rigidbody.AddForce(Vector2.up * _jumpSpeed);
         }).AddTo(this);
 

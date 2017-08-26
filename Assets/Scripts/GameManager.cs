@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     public GameObject player;
     public GameObject hud;
 
-	// Use this for initialization
-	void Awake () {
+    // Use this for initialization
+    void Awake()
+    {
         //grab gamesettings from stream later
         GameSettings gs;
         gs.numPlayers = 4;
@@ -19,7 +21,7 @@ public class GameManager : MonoBehaviour {
         }
 
         GameObject canvasObj = GameObject.FindGameObjectWithTag("Canvas");
-        if(canvasObj != null)
+        if (canvasObj != null)
         {
             GameObject hudObj = Instantiate(hud, canvasObj.transform);
 
@@ -32,7 +34,7 @@ public class GameManager : MonoBehaviour {
         }
 
 
-	}
+    }
 
     //TODO: choose spawnpoints from stage
     void SpawnPlayer(int i)
@@ -41,7 +43,7 @@ public class GameManager : MonoBehaviour {
         GameObject newPlayer = Instantiate(player);
         newPlayer.name = "Player " + i;
         Assets.Scripts.ControllerInput inputScript = newPlayer.GetComponent<Assets.Scripts.ControllerInput>();
-        if(inputScript != null)
+        if (inputScript != null)
         {
             inputScript.PlayerNumber = i;
             newPlayer.GetComponent<CharacterManager>().Initialize(i);
