@@ -5,12 +5,19 @@ using System.Linq;
 
 public class CharacterManager : MonoBehaviour
 {
+    public GameObject characterPrefab;
+
     private Character _activeCharacter;
 
     private Character[] _characters;
 
     void Awake()
     {
+        for(int i = 0; i < 4; i++)
+        {
+            Instantiate(characterPrefab, transform);
+        }
+
         _characters = GetComponentsInChildren<Character>();
 
         foreach (var character in _characters)
