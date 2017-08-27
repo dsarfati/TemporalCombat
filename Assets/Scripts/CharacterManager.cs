@@ -16,7 +16,7 @@ public class CharacterManager : MonoBehaviour
 
     public Transform ActiveCharacterTransform;
 
-    private Dictionary<int, Character> _characters = new Dictionary<int, Character>();
+    private List<Character> _characters = new List<Character>();
 
     private int _characterIndex = 0;
 
@@ -59,7 +59,7 @@ public class CharacterManager : MonoBehaviour
 
         foreach (var character in characters)
         {
-            _characters.Add(characterNum++, character);
+            _characters.Add(character);
             character.Deactivate();
 
             character.Receive<DeathEvent>().Subscribe(CharacterDied).AddTo(this);
@@ -71,6 +71,8 @@ public class CharacterManager : MonoBehaviour
 
     public void ActivateCharacter(int characterDirection)
     {
+        if (_characters.Count == 0)
+            return;
         //Previous
         if (characterDirection == PREVIOUS_CODE)
         {
@@ -88,13 +90,13 @@ public class CharacterManager : MonoBehaviour
                 _characterIndex = 0;
         }
 
-        Character newCharacter;
+        Character newCharacter = _characters[_characterIndex];
 
-        if (!_characters.TryGetValue(_characterIndex, out newCharacter))
-        {
-            Debug.LogErrorFormat("Invalid character index {0}", _characterIndex);
-            return;
-        }
+        //if (!_characters.TryGetValue(_characterIndex, out newCharacter))
+        //{
+        //    Debug.LogErrorFormat("Invalid character index {0}", _characterIndex);
+        //    return;
+        //}
 
         ActivateCharacter(newCharacter);
     }
@@ -120,6 +122,7 @@ public class CharacterManager : MonoBehaviour
         var pos = death.Character.transform.position;
         var go = Instantiate<GameObject>(personExplode);
         go.transform.position = pos;
+        _characters.Remove(death.Character);
         // ActivateCharacter(bestCharacter);
         ActivateCharacter(NEXT_CODE);
     }

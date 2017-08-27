@@ -5,8 +5,8 @@ using UniRx;
 using UniRx.Triggers;
 
 public class SplatPlayer : MonoBehaviour {
-    
 
+    public GameObject giblets;
 	// Use this for initialization
 	void Start () {
         var trigger = this.GetComponent<ObservableTrigger2DTrigger>();
@@ -15,6 +15,11 @@ public class SplatPlayer : MonoBehaviour {
             .Where(coll => coll.gameObject.tag == "Character" || coll.gameObject.tag == "Ground") //in case we use triggers for other things
             .Subscribe(coll =>
             {
+                if(coll.gameObject.tag == "Character")
+                {
+                    Instantiate(giblets, coll.transform.position, Quaternion.identity);
+                }
+                Destroy(coll.gameObject);
                 Debug.Log(gameObject.name + " Colliding(gameover) with " + coll.gameObject.name);
                 //Destroy(coll.gameObject);
                 Destroy(this.GetComponent<Rigidbody2D>());
