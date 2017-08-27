@@ -22,23 +22,27 @@ public class CharacterManager : MonoBehaviour
     {
     }
 
-    public void Initialize(int x)
+    public void Initialize(int playerId)
     {
+        playerId--;
         GameObject baseSpawn = GameObject.FindGameObjectWithTag("Spawn");
 
-        Debug.Log(baseSpawn.name + " Access " + x + " out of " + baseSpawn.transform.childCount);
-        Transform spawnSet = baseSpawn.transform.GetChild(x - 1);
+        Debug.Log(baseSpawn.name + " Access " + playerId + " out of " + baseSpawn.transform.childCount);
+        Transform spawnSet = baseSpawn.transform.GetChild(playerId);
 
         for (int i = 0; i < 4; i++)
         {
+            var characterColor = palette.TextColors[playerId];
             GameObject characterObj = Instantiate(characterPrefab, spawnSet.GetChild(i).position, Quaternion.identity, transform);
             characterObj.SetActive(true);
             TextMesh buttonTitle = characterObj.GetComponentInChildren<TextMesh>();
             if (buttonTitle != null)
             {
                 buttonTitle.text = titles[i];
-                buttonTitle.color = palette.TextColors[GetComponent<Player>().playerId - 1];
+                buttonTitle.color = characterColor;
             }
+
+            characterObj.transform.FindDeepChild("Body").GetComponent<SpriteRenderer>().color = characterColor;
         }
 
         var characters = GetComponentsInChildren<Character>();
