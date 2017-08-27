@@ -16,6 +16,12 @@ public class CharacterManager : MonoBehaviour
 
     private Dictionary<int, Character> _characters = new Dictionary<int, Character>();
 
+    private int _characterIndex = 0;
+
+    private const int NEXT_CODE = 1;
+    private const int PREVIOUS_CODE = 0;
+
+
     private string[] titles = { "RB", "LB", "RT", "LT" };
 
     void Awake()
@@ -57,16 +63,34 @@ public class CharacterManager : MonoBehaviour
             character.Receive<DeathEvent>().Subscribe(CharacterDied).AddTo(this);
         }
 
-        ActivateCharacter(0);
+        //Activate the first character
+        ActivateCharacter(characters[_characterIndex]);
     }
 
-    public void ActivateCharacter(int characterNum)
+    public void ActivateCharacter(int characterDirection)
     {
+        //Previous
+        if (characterDirection == PREVIOUS_CODE)
+        {
+            _characterIndex--;
+
+            if (_characterIndex < 0)
+                _characterIndex = _characters.Count - 1;
+        }
+        //Next
+        else if (characterDirection == NEXT_CODE)
+        {
+            _characterIndex++;
+
+            if (_characterIndex >= _characters.Count)
+                _characterIndex = 0;
+        }
+
         Character newCharacter;
 
-        if (!_characters.TryGetValue(characterNum, out newCharacter))
+        if (!_characters.TryGetValue(_characterIndex, out newCharacter))
         {
-            Debug.LogErrorFormat("Invalid character index {0}", characterNum);
+            Debug.LogErrorFormat("Invalid character index {0}", _characterIndex);
             return;
         }
 
@@ -91,27 +115,8 @@ public class CharacterManager : MonoBehaviour
 
     private void CharacterDied(DeathEvent death)
     {
-        //Get the position of the death to find the next closest player
-        var pos = death.Character.transform.position;
-
-        var bestDist = float.MaxValue;
-        Character bestCharacter = null;
-
-        foreach (var character in _characters.Values)
-        {
-            if (character == null || character == death.Character)
-                continue;
-
-            var dist = Vector2.Distance(character.transform.position, pos);
-
-            if (dist > bestDist)
-                continue;
-
-            bestDist = dist;
-            bestCharacter = character;
-        }
-
-        ActivateCharacter(bestCharacter);
+        // ActivateCharacter(bestCharacter);
+        ActivateCharacter(NEXT_CODE);
     }
 
     public void MoveToSpawn()
