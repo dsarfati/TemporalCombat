@@ -8,6 +8,7 @@ using UniRx.Triggers; // need UniRx.Triggers namespace
 
 public class CharacterHealth : MonoBehaviour
 {
+    public AudioEvent hitSfx;
     public int invincibilityTime = 1000;
     public int currHealth = 2;
     public bool isDead
@@ -34,6 +35,7 @@ public class CharacterHealth : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
+        hitSfx.Play(GetComponent<AudioSource>());
         currHealth -= dmg;
 
         if(isDead)

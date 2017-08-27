@@ -12,6 +12,8 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private float _jumpSpeed = 1;
 
+    public AudioEvent jumpSfx;
+
     private bool _isActive = false;
 
     /// <summary>
@@ -51,6 +53,7 @@ public class CharacterMovement : MonoBehaviour
                 }
 
                 jumpCount++;
+                jumpSfx.Play(GetComponent<AudioSource>());
                 rigidbody.AddForce(Vector2.up * _jumpSpeed);
             }
 
