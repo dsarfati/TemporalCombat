@@ -9,7 +9,7 @@ public class AttackManager : MonoBehaviour
     private int _attackFrames = 1;
 
     private bool _isAttacking = false;
-
+    [SerializeField] private SpriteRenderer swoosh;
     void Awake()
     {
         //Assumes the starting position is on the left side of the character
@@ -23,6 +23,7 @@ public class AttackManager : MonoBehaviour
               if (this != null && m.XValue != 0)
               {
                   transform.localPosition = new Vector2(startPosition * Mathf.Sign(m.XValue), transform.localPosition.y);
+                  swoosh.flipX =  m.XValue > 0;
               }
           }).AddTo(this);
 
