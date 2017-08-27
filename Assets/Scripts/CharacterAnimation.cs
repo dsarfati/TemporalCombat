@@ -12,30 +12,22 @@ public class CharacterAnimation : MonoBehaviour {
         anim = GetComponent<Animator>();
         if(anim != null)
         {
-            transform.parent.parent.Receive<MoveInput>()
+            transform.parent.parent.parent.Receive<MoveInput>()
                 .Subscribe(Input =>
                 {
-                    if (Input.XValue == 0)
+                    if (Input.XValue < 0)
                     {
-                        anim.SetTrigger("Idling");
+                        transform.localScale = new Vector3(-1, 1, 1);
                     }
-                    else
+                    else if (Input.XValue > 0)
                     {
-                        if(Input.XValue < 0)
-                        {
-                            transform.localScale = new Vector3(-1, 1, 1);
-                        }
-                        else if(Input.XValue > 0)
-                        {
-                            transform.localScale = new Vector3(1, 1, 1);
-                        }
-                        anim.SetTrigger("Walking");
-                        anim.speed = Input.XValue;
+                        transform.localScale = new Vector3(1, 1, 1);
                     }
+                    anim.SetFloat("Movement", Mathf.Abs(Input.XValue));
 
                 }).AddTo(this);
 
-            transform.parent.parent.Receive<AttackInput>()
+            transform.parent.parent.parent.Receive<AttackInput>()
                 .Subscribe(Input =>
                 {
                     

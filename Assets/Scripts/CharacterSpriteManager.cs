@@ -7,10 +7,10 @@ public class CharacterSpriteManager : MonoBehaviour
 {
 
     [SerializeField]
-    private SpriteRenderer _activeSprite;
+    private GameObject _activeSprite;
 
     [SerializeField]
-    private SpriteRenderer _inActiveSprite;
+    private GameObject _inActiveSprite;
 
     void Awake()
     {
