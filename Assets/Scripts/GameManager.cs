@@ -109,7 +109,10 @@ public class GameManager : MonoBehaviour
                     spawnPos.y = 10;
                     boulder.transform.position = spawnPos;
                     boulder.SetActive(true);
-                    break;
+                }
+                else
+                {
+                    Destroy(character);
                 }
             }
 

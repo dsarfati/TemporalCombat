@@ -16,8 +16,9 @@ public class SplatPlayer : MonoBehaviour {
             .Subscribe(coll =>
             {
                 Debug.Log(gameObject.name + " Colliding(gameover) with " + coll.gameObject.name);
-                Destroy(coll.gameObject);
+                //Destroy(coll.gameObject);
                 Destroy(this.GetComponent<Rigidbody2D>());
+
 
                 Vector3 camTarget = transform.position;
                 for (int i = 0; i < 10; i++)
