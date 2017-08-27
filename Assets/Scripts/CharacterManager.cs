@@ -10,19 +10,19 @@ public class CharacterManager : MonoBehaviour
 
     private Character _activeCharacter;
 
+    public Transform ActiveCharacterTransform;
+
     private Dictionary<int, Character> _characters = new Dictionary<int, Character>();
 
     private string[] titles = { "RB", "RT", "LB", "LT" };
 
     void Awake()
     {
-
     }
 
     public void Initialize(int x)
     {
         GameObject baseSpawn = GameObject.FindGameObjectWithTag("Spawn");
-
 
         Debug.Log(baseSpawn.name + " Access " + x + " out of " + baseSpawn.transform.childCount);
         Transform spawnSet = baseSpawn.transform.GetChild(x-1);
@@ -49,6 +49,9 @@ public class CharacterManager : MonoBehaviour
 
             character.Receive<DeathEvent>().Subscribe(CharacterDied).AddTo(this);
         }
+
+       
+
 
         ActivateCharacter(0);
     }
@@ -78,6 +81,7 @@ public class CharacterManager : MonoBehaviour
         }
 
         _activeCharacter = newCharacter;
+        ActiveCharacterTransform = _activeCharacter.transform;
         newCharacter.Activate();
     }
 
