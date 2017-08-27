@@ -806,7 +806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraTrans: {fileID: 1179585543}
   TargetPos: {x: 0, y: 0, z: 0}
-  CamSpeed: 5
+  CamSpeed: 6
   ViewportMinOffset: -4.5
 --- !u!4 &535118150
 Transform:
@@ -2410,7 +2410,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1352705047}
   - component: {fileID: 1352705046}
-  - component: {fileID: 1352705048}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -2446,17 +2445,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1352705048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1352705045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef290ccada5cc4d939abbb1d62e9434d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1396358646
 GameObject:
   m_ObjectHideFlags: 0
@@ -3320,7 +3308,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 3519
+  _randomSeed: 7769
   randomSeedOnEnable: 1
 --- !u!199 &1410908531
 ParticleSystemRenderer:
@@ -3433,7 +3421,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 497375910
+  randomSeed: -912051265
   InitialModule:
     serializedVersion: 3
     enabled: 1
