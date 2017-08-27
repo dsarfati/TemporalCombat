@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static List<GameSettings> players = new List<GameSettings>();
     public GameObject player;
     public GameObject hud;
+    public GameObject gameoverSeq;
     private bool gameover = false;
 
     // Use this for initialization
@@ -25,31 +26,31 @@ public class GameManager : MonoBehaviour
                     CheckGameOver();
                 }).AddTo(this);
 
-            Assets.Scripts.InputHandlerSingleton.Instance.Player1Jump
-                .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player2Jump)
-                .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player3Jump)
-                .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player4Jump)
-                .Subscribe(_ =>
-                {
-                    if (gameover)
-                    {
-                        UnityEngine.SceneManagement.SceneManager.LoadScene("Arena");
-                    }
-                })
-                .AddTo(this);
+            //Assets.Scripts.InputHandlerSingleton.Instance.Player1Jump
+            //    .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player2Jump)
+            //    .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player3Jump)
+            //    .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player4Jump)
+            //    .Subscribe(_ =>
+            //    {
+            //        if (gameover)
+            //        {
+            //            UnityEngine.SceneManagement.SceneManager.LoadScene("Arena");
+            //        }
+            //    })
+            //    .AddTo(this);
 
-            Assets.Scripts.InputHandlerSingleton.Instance.Player1Attack
-                .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player2Attack)
-                .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player3Attack)
-                .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player4Attack)
-                .Subscribe(_ =>
-                {
-                    if (gameover)
-                    {
-                        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
-                    }
-                })
-                .AddTo(this);
+            //Assets.Scripts.InputHandlerSingleton.Instance.Player1Attack
+            //    .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player2Attack)
+            //    .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player3Attack)
+            //    .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player4Attack)
+            //    .Subscribe(_ =>
+            //    {
+            //        if (gameover)
+            //        {
+            //            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+            //        }
+            //    })
+            //    .AddTo(this);
 
             foreach (var gs in players)
             {
@@ -117,6 +118,7 @@ public class GameManager : MonoBehaviour
     private void RunGameOverSequence()
     {
         Debug.Log("GAME OVER ASDJFKLSDJFFDJSKLDSFKJLDSFJLK");
+
 
         gameover = true;
     }
