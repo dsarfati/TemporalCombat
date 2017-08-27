@@ -10,6 +10,8 @@ public class CharacterManager : MonoBehaviour
 
     public GameObject characterPrefab;
 
+    public GameObject personExplode;
+
     private Character _activeCharacter;
 
     public Transform ActiveCharacterTransform;
@@ -115,6 +117,9 @@ public class CharacterManager : MonoBehaviour
 
     private void CharacterDied(DeathEvent death)
     {
+        var pos = death.Character.transform.position;
+        var go = Instantiate<GameObject>(personExplode);
+        go.transform.position = pos;
         // ActivateCharacter(bestCharacter);
         ActivateCharacter(NEXT_CODE);
     }

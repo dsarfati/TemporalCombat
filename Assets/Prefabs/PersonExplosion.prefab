@@ -28,7 +28,7 @@ GameObject:
   m_Icon: {fileID: 2800000, guid: 344d4b0036e1d401e8c6c53be26368f0, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1217869424343214
 GameObject:
   m_ObjectHideFlags: 1
@@ -1126,7 +1126,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 6598
+  _randomSeed: 8122
   randomSeedOnEnable: 1
 --- !u!114 &114047827149731906
 MonoBehaviour:
@@ -1892,7 +1892,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 2663
+  _randomSeed: 3983
   randomSeedOnEnable: 1
 --- !u!114 &114283407649055454
 MonoBehaviour:
@@ -2367,8 +2367,8 @@ MonoBehaviour:
   threadMethod: 0
   multithreadedStartup: 1
   scriptedEmissionIndex: 12
-  scriptedEmissionPosition: {x: -7.421486, y: -52.121964, z: -7.8577175}
-  scriptedEmissionVelocity: {x: -0.40157303, y: -16.413313, z: -1.0178798}
+  scriptedEmissionPosition: {x: 4.338264, y: 0.2139961, z: 0.23558006}
+  scriptedEmissionVelocity: {x: 1.7344604, y: -2.6872544, z: -0.0377487}
   scriptedEmissionColor: {r: 1, g: 0, b: 0, a: 1}
   collision: 0
   affectRigidbodies: 1
@@ -2617,7 +2617,7 @@ MonoBehaviour:
   timeOfSnapshot: 0
   isSnapshot: 0
   shurikenParticleSystem: {fileID: 198186609226884074}
-  particleSystemId: 16
+  particleSystemId: 15
   particleSystemGameObject: {fileID: 1659464192896310}
   particleSystemTransform: {fileID: 4419843469953964}
   particleSystemRenderer: {fileID: 199921593362784136}
@@ -2639,7 +2639,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 4480
+  _randomSeed: 2076
   randomSeedOnEnable: 1
 --- !u!114 &114406863882792732
 MonoBehaviour:
@@ -2658,7 +2658,7 @@ MonoBehaviour:
   loop: 0
   clearParticlesOnEmissionStop: 0
   disableOnDone: 1
-  disableOnDoneRoutine: 0
+  disableOnDoneRoutine: 1
   updateRate: 1
   calculate: 1
   calculateDeltaMovement: 0
@@ -3385,7 +3385,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 9222
+  _randomSeed: 8899
   randomSeedOnEnable: 1
 --- !u!114 &114645395256206322
 MonoBehaviour:
@@ -3859,9 +3859,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   threadMethod: 0
   multithreadedStartup: 1
-  scriptedEmissionIndex: 11
-  scriptedEmissionPosition: {x: -14.545889, y: -52.7898, z: -7.112241}
-  scriptedEmissionVelocity: {x: -2.1618295, y: -16.197575, z: -1.1055149}
+  scriptedEmissionIndex: 27
+  scriptedEmissionPosition: {x: -0.02164381, y: 2.3592205, z: 1.0399878}
+  scriptedEmissionVelocity: {x: 0.045125596, y: -0.9234234, z: 0.5462235}
   scriptedEmissionColor: {r: 1, g: 0, b: 0, a: 1}
   collision: 0
   affectRigidbodies: 1
@@ -4110,7 +4110,7 @@ MonoBehaviour:
   timeOfSnapshot: 0
   isSnapshot: 0
   shurikenParticleSystem: {fileID: 198317863783755220}
-  particleSystemId: 13
+  particleSystemId: 12
   particleSystemGameObject: {fileID: 1483863108861312}
   particleSystemTransform: {fileID: 4784619744557374}
   particleSystemRenderer: {fileID: 199215842326447934}
@@ -4132,7 +4132,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 8107
+  _randomSeed: 3536
   randomSeedOnEnable: 1
 --- !u!114 &114830005190806556
 MonoBehaviour:
@@ -4898,7 +4898,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 1636
+  _randomSeed: 1924
   randomSeedOnEnable: 1
 --- !u!114 &114839196684226472
 MonoBehaviour:
@@ -5373,8 +5373,8 @@ MonoBehaviour:
   threadMethod: 0
   multithreadedStartup: 1
   scriptedEmissionIndex: 8
-  scriptedEmissionPosition: {x: 18.642513, y: -54.815773, z: 1.200825}
-  scriptedEmissionVelocity: {x: 2.0433357, y: -16.332272, z: 0.3722378}
+  scriptedEmissionPosition: {x: -2.1462624, y: 1.7483493, z: 0.3337022}
+  scriptedEmissionVelocity: {x: -1.0712934, y: -1.6598694, z: -0.35352516}
   scriptedEmissionColor: {r: 1, g: 0, b: 0, a: 1}
   collision: 0
   affectRigidbodies: 1
@@ -5623,7 +5623,7 @@ MonoBehaviour:
   timeOfSnapshot: 0
   isSnapshot: 0
   shurikenParticleSystem: {fileID: 198286330514218340}
-  particleSystemId: 12
+  particleSystemId: 16
   particleSystemGameObject: {fileID: 1428528621706572}
   particleSystemTransform: {fileID: 4238074932154230}
   particleSystemRenderer: {fileID: 199459663352036360}
@@ -5645,7 +5645,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 2456
+  _randomSeed: 2489
   randomSeedOnEnable: 1
 --- !u!114 &114842503128572124
 MonoBehaviour:
@@ -6411,7 +6411,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 486
+  _randomSeed: 9170
   randomSeedOnEnable: 1
 --- !u!114 &114925294239096200
 MonoBehaviour:
@@ -6886,8 +6886,8 @@ MonoBehaviour:
   threadMethod: 0
   multithreadedStartup: 1
   scriptedEmissionIndex: 2
-  scriptedEmissionPosition: {x: -11.187554, y: -52.86522, z: -5.3629074}
-  scriptedEmissionVelocity: {x: -1.5063543, y: -16.851627, z: -0.94294196}
+  scriptedEmissionPosition: {x: -5.748526, y: 2.3645842, z: 0.41414198}
+  scriptedEmissionVelocity: {x: -2.8599625, y: -1.3034064, z: 0.17737117}
   scriptedEmissionColor: {r: 1, g: 0, b: 0, a: 1}
   collision: 0
   affectRigidbodies: 1
@@ -7136,7 +7136,7 @@ MonoBehaviour:
   timeOfSnapshot: 0
   isSnapshot: 0
   shurikenParticleSystem: {fileID: 198573593612772824}
-  particleSystemId: 15
+  particleSystemId: 14
   particleSystemGameObject: {fileID: 1738459137223848}
   particleSystemTransform: {fileID: 4616075370174336}
   particleSystemRenderer: {fileID: 199911208530735726}
@@ -7158,7 +7158,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 4644
+  _randomSeed: 7711
   randomSeedOnEnable: 1
 --- !u!114 &114947778988744744
 MonoBehaviour:
@@ -7632,9 +7632,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   threadMethod: 0
   multithreadedStartup: 1
-  scriptedEmissionIndex: 9
-  scriptedEmissionPosition: {x: 7.095405, y: -52.471157, z: -2.298138}
-  scriptedEmissionVelocity: {x: 1.3254325, y: -16.03185, z: -0.35447177}
+  scriptedEmissionIndex: 25
+  scriptedEmissionPosition: {x: 5.7788296, y: 1.4768287, z: 0.06725253}
+  scriptedEmissionVelocity: {x: 2.3251967, y: -1.6328101, z: -0.10326065}
   scriptedEmissionColor: {r: 1, g: 0, b: 0, a: 1}
   collision: 0
   affectRigidbodies: 1
@@ -7883,7 +7883,7 @@ MonoBehaviour:
   timeOfSnapshot: 0
   isSnapshot: 0
   shurikenParticleSystem: {fileID: 198216791667044546}
-  particleSystemId: 14
+  particleSystemId: 13
   particleSystemGameObject: {fileID: 1217869424343214}
   particleSystemTransform: {fileID: 4156740392632028}
   particleSystemRenderer: {fileID: 199194963623376188}
@@ -7905,7 +7905,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 8230
+  _randomSeed: 5609
   randomSeedOnEnable: 1
 --- !u!114 &114970704292234510
 MonoBehaviour:
@@ -8671,7 +8671,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 2246
+  _randomSeed: 3836
   randomSeedOnEnable: 1
 --- !u!198 &198028242620604742
 ParticleSystem:
@@ -8732,7 +8732,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 2110887402
+  randomSeed: -1171636350
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -11994,7 +11994,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1743927398
+  randomSeed: 1589860226
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -15256,7 +15256,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1034220461
+  randomSeed: 39635511
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -18518,7 +18518,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1170565313
+  randomSeed: -1134955848
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -21780,7 +21780,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1681365426
+  randomSeed: 1527797332
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -25042,7 +25042,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -2076165805
+  randomSeed: 1166300647
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -28304,7 +28304,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -772842886
+  randomSeed: -123039617
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -31566,7 +31566,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 322730973
+  randomSeed: -912926662
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -34828,7 +34828,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1809455739
+  randomSeed: 1008930274
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -38090,7 +38090,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1775025431
+  randomSeed: -1361474709
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -41295,7 +41295,7 @@ ParticleSystem:
         m_RotationOrder: 4
 --- !u!198 &198948767242418716
 ParticleSystem:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149363814728828}
@@ -41352,7 +41352,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -477326657
+  randomSeed: 1176442000
   InitialModule:
     serializedVersion: 3
     enabled: 1
