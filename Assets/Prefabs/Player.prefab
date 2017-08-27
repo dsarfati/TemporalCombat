@@ -91,8 +91,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   palette: {fileID: 11400000, guid: 782cb46d2888b5949bcd74872bdc4d93, type: 2}
-  characterPrefab: {fileID: 1932295941653450, guid: 6a887d3da6851425fa5f1ea106194c87,
+  characterPrefab: {fileID: 1541675473750722, guid: 6b49dce6ee33ff946a38722ae43b10ba,
     type: 2}
+  ActiveCharacterTransform: {fileID: 0}
 --- !u!114 &114488053572941912
 MonoBehaviour:
   m_ObjectHideFlags: 1
