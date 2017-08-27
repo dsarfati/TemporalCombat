@@ -15,6 +15,8 @@ public enum Helmet
 public class Character : MonoBehaviour
 {
     public bool IsActive { get; private set; }
+    public GameObject SpawnEffect;
+    public GameObject DespawnEffect;
 
     void Awake()
     {
@@ -42,12 +44,14 @@ public class Character : MonoBehaviour
 
     public void Activate()
     {
+        SpawnEffect.SetActive(true);
         IsActive = true;
         this.Send(new CharacterActivated(true));
     }
 
     public void Deactivate()
     {
+        DespawnEffect.SetActive(true);
         IsActive = false;
         this.Send(new CharacterActivated(false));
     }

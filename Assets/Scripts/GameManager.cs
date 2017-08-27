@@ -90,11 +90,20 @@ public class GameManager : MonoBehaviour
             Destroy(x);
         }
 
+        
+
         foreach (var character in GameObject.FindGameObjectsWithTag("Character"))
         {
             if (character.GetComponent<Character>().IsActive && !character.GetComponent<CharacterHealth>().isDead)
             {
+
                 Vector3 spawnPos = character.transform.position;
+                Vector3 camTarget = spawnPos + new Vector3(0, 3, 0);
+                for (int i = 0; i < 10; i++)
+                {
+                    this.Send(new PositionUpdate(camTarget + new Vector3(5, 0, 0), Vector3.zero));
+                    this.Send(new PositionUpdate(camTarget + new Vector3(-5, 0, 0), Vector3.zero));
+                }
                 spawnPos.y = 10;
                 Instantiate(boulder, spawnPos, Quaternion.identity);
                 break;

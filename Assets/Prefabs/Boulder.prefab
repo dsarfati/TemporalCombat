@@ -191,8 +191,8 @@ TextMesh:
   m_Text: 'GAME OVER
 
     Press A to Restart'
-  m_OffsetZ: -3.71
-  m_CharacterSize: 0.33
+  m_OffsetZ: -0.1
+  m_CharacterSize: 0.27
   m_LineSpacing: 1
   m_Anchor: 1
   m_Alignment: 1
