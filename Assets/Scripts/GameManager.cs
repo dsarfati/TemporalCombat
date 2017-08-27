@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
             {
                 CheckGameOver();
             }).AddTo(this);
-        
+
         var hudCtrl = GameObject.FindObjectOfType<HUDController>();
 
         foreach (var gs in players)
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
             {
                 hudCtrl.AddPlayers(gs.PlayerId);
             }
-            SpawnPlayer(gs.PlayerId);
+            SpawnPlayer(gs);
             //}
 
 
@@ -42,24 +42,23 @@ public class GameManager : MonoBehaviour
     }
 
     //TODO: choose spawnpoints from stage
-    void SpawnPlayer(int i)
+    void SpawnPlayer(GameSettings settings)
     {
 
         GameObject newPlayer = Instantiate(player);
-        newPlayer.name = "Player " + i;
+        newPlayer.name = "Player " + settings.PlayerId;
         Player playerScript = newPlayer.GetComponent<Player>();
         if (playerScript != null)
         {
-            playerScript.playerId = i;
+            playerScript.playerId = settings.PlayerId;
         }
 
         Assets.Scripts.ControllerInput inputScript = newPlayer.GetComponent<Assets.Scripts.ControllerInput>();
         if (inputScript != null)
         {
-            inputScript.PlayerNumber = i - 1;
-            newPlayer.GetComponent<CharacterManager>().Initialize(i);
+            inputScript.PlayerNumber = settings.PlayerId - 1;
+            newPlayer.GetComponent<CharacterManager>().Initialize(settings);
         }
-
     }
 
     private void CheckGameOver()
@@ -83,7 +82,7 @@ public class GameManager : MonoBehaviour
 
     private void RunGameOverSequence()
     {
-        if(!gameover)
+        if (!gameover)
         {
             gameover = true;
             Debug.Log("GAME OVER ASDJFKLSDJFFDJSKLDSFKJLDSFJLK");
@@ -96,8 +95,8 @@ public class GameManager : MonoBehaviour
 
             foreach (var character in GameObject.FindGameObjectsWithTag("Character"))
             {
-                
-                if(character != null)
+
+                if (character != null)
                 {
                     var charScript = character.GetComponent<Character>();
                     var healthScript = character.GetComponent<CharacterHealth>();
@@ -120,11 +119,11 @@ public class GameManager : MonoBehaviour
                         Destroy(character);
                     }
                 }
-                
+
             }
 
         }
     }
-        
+
 
 }
