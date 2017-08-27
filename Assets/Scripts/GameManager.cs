@@ -27,16 +27,13 @@ public class GameManager : MonoBehaviour
             {
                 GameObject hudObj = Instantiate(hud, canvasObj.transform);
 
-<<<<<<< HEAD
                 HUDController hudCtrl = hudObj.GetComponent<HUDController>();
-=======
         this.ReceiveAll<DeathEvent>()
             .Subscribe(_ =>
             {
                 CheckGameOver();
             });
 
->>>>>>> 947649d6e054452d55bf14411f7e9a7526493de6
 
                 if (hudCtrl != null)
                 {

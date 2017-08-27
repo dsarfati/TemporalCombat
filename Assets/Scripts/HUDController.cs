@@ -20,7 +20,7 @@ public class HUDController : MonoBehaviour {
             LifeCounter counter = playerStatsObj.GetComponentInChildren<LifeCounter>();
             if(counter != null)
             {
-                counter.playerId = i;
+                counter.playerId = x;
             }
             Text playerName = playerStatsObj.GetComponentInChildren<Text>();
             playerName.text = "Player " + (x);
