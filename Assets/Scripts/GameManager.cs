@@ -8,71 +8,37 @@ public class GameManager : MonoBehaviour
     public static List<GameSettings> players = new List<GameSettings>();
     public GameObject player;
     public GameObject hud;
-    public GameObject gameoverSeq;
+    public GameObject boulder;
     private bool gameover = false;
 
     // Use this for initialization
     public void Awake()
     {
-        GameObject canvasObj = GameObject.FindGameObjectWithTag("Canvas");
-        if (canvasObj != null)
-        {
-            GameObject hudObj = Instantiate(hud, canvasObj.transform);
-
-            HUDController hudCtrl = hudObj.GetComponent<HUDController>();
-            this.ReceiveAll<DeathEvent>()
-                .Subscribe(_ =>
-                {
-                    CheckGameOver();
-                }).AddTo(this);
-
-            //Assets.Scripts.InputHandlerSingleton.Instance.Player1Jump
-            //    .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player2Jump)
-            //    .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player3Jump)
-            //    .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player4Jump)
-            //    .Subscribe(_ =>
-            //    {
-            //        if (gameover)
-            //        {
-            //            UnityEngine.SceneManagement.SceneManager.LoadScene("Arena");
-            //        }
-            //    })
-            //    .AddTo(this);
-
-            //Assets.Scripts.InputHandlerSingleton.Instance.Player1Attack
-            //    .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player2Attack)
-            //    .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player3Attack)
-            //    .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player4Attack)
-            //    .Subscribe(_ =>
-            //    {
-            //        if (gameover)
-            //        {
-            //            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
-            //        }
-            //    })
-            //    .AddTo(this);
-
-            foreach (var gs in players)
+        this.ReceiveAll<DeathEvent>()
+            .Subscribe(_ =>
             {
-                if (gs.PlayerId == -1) continue;
-                //grab gamesettings from stream later
-                print("maaaagic");
-                //for (int i = 0; i < gs.PlayerIds.Length; i++)
-                //{
-                if (hudCtrl != null)
-                {
-                    hudCtrl.AddPlayers(gs.PlayerId);
-                }
-                SpawnPlayer(gs.PlayerId);
-                //}
+                CheckGameOver();
+            }).AddTo(this);
+        
+        var hudCtrl = GameObject.FindObjectOfType<HUDController>();
 
-
+        foreach (var gs in players)
+        {
+            if (gs.PlayerId == -1) continue;
+            //grab gamesettings from stream later
+            print("maaaagic");
+            //for (int i = 0; i < gs.PlayerIds.Length; i++)
+            //{
+            if (hudCtrl != null)
+            {
+                hudCtrl.AddPlayers(gs.PlayerId);
             }
-            players = new List<GameSettings>();
+            SpawnPlayer(gs.PlayerId);
+            //}
+
 
         }
-
-        
+        players = new List<GameSettings>();
     }
 
     //TODO: choose spawnpoints from stage
@@ -82,15 +48,15 @@ public class GameManager : MonoBehaviour
         GameObject newPlayer = Instantiate(player);
         newPlayer.name = "Player " + i;
         Player playerScript = newPlayer.GetComponent<Player>();
-        if(playerScript != null)
+        if (playerScript != null)
         {
             playerScript.playerId = i;
         }
-        
+
         Assets.Scripts.ControllerInput inputScript = newPlayer.GetComponent<Assets.Scripts.ControllerInput>();
         if (inputScript != null)
         {
-            inputScript.PlayerNumber = i-1;
+            inputScript.PlayerNumber = i - 1;
             newPlayer.GetComponent<CharacterManager>().Initialize(i);
         }
 
@@ -101,15 +67,15 @@ public class GameManager : MonoBehaviour
         Debug.Log("CHGECKING GAME OVER");
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         int numPlayersAlive = 0;
-        foreach(var player in players)
+        foreach (var player in players)
         {
-            if(player.GetComponent<PlayerManager>().CheckAlive())
+            if (player.GetComponent<PlayerManager>().CheckAlive())
             {
                 numPlayersAlive++;
             }
         }
 
-        if(numPlayersAlive <= 1)
+        if (numPlayersAlive <= 1)
         {
             RunGameOverSequence();
         }
@@ -118,7 +84,22 @@ public class GameManager : MonoBehaviour
     private void RunGameOverSequence()
     {
         Debug.Log("GAME OVER ASDJFKLSDJFFDJSKLDSFKJLDSFJLK");
+        //stop all movement
+        foreach (var x in GameObject.FindObjectsOfType<CharacterMovement>())
+        {
+            Destroy(x);
+        }
 
+        foreach (var character in GameObject.FindGameObjectsWithTag("Character"))
+        {
+            if (character.GetComponent<Character>().IsActive && !character.GetComponent<CharacterHealth>().isDead)
+            {
+                Vector3 spawnPos = character.transform.position;
+                spawnPos.y = 10;
+                Instantiate(boulder, spawnPos, Quaternion.identity);
+                break;
+            }
+        }
 
         gameover = true;
     }

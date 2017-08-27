@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 68550497526296540}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invincibilityTime: 1000
-  currHealth: 2
+  currHealth: 1
 --- !u!114 &114034048925463774
 MonoBehaviour:
   m_ObjectHideFlags: 1
