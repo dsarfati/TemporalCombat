@@ -6,6 +6,8 @@ using UniRx;
 
 public class CharacterManager : MonoBehaviour
 {
+    public ColorSet palette;
+
     public GameObject characterPrefab;
 
     private Character _activeCharacter;
@@ -35,6 +37,7 @@ public class CharacterManager : MonoBehaviour
             if (buttonTitle != null)
             {
                 buttonTitle.text = titles[i];
+                buttonTitle.color = palette.TextColors[GetComponent<Player>().playerId-1];
             }
         }
 

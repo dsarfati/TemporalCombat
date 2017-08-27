@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ca7b55dbd6b4eeb9723f0990635ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  palette: {fileID: 11400000, guid: 782cb46d2888b5949bcd74872bdc4d93, type: 2}
   characterPrefab: {fileID: 1932295941653450, guid: 6a887d3da6851425fa5f1ea106194c87,
     type: 2}
 --- !u!114 &114488053572941912

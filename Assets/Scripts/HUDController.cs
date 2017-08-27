@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour {
 
+    public ColorSet palette;
     public GameObject playerStats;
 
 	// Use this for initialization
@@ -27,8 +28,7 @@ public class HUDController : MonoBehaviour {
             Image playerPlacard = playerStatsObj.transform.GetChild(0).GetComponent<Image>();
             if(playerPlacard != null)
             {
-                Color randColor = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
-                playerPlacard.color = randColor;
+                playerPlacard.color = palette.HUDColors[x-1];
             }
         //}
     }

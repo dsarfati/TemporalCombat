@@ -19,7 +19,7 @@ public class LifeCounter : MonoBehaviour {
             .Subscribe(_ =>
             {
                 LoseLife();
-            });
+            }).AddTo(this);
             
 	}
 	
