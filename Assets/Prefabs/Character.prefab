@@ -340,7 +340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1593814671348654
 GameObject:
   m_ObjectHideFlags: 1
@@ -1108,7 +1108,7 @@ TextMesh:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1119595519591994}
   m_Text: Blank
-  m_OffsetZ: 1
+  m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
   m_Anchor: 7
@@ -1303,7 +1303,7 @@ MonoBehaviour:
   m_SpriteMesh: {fileID: 11400000, guid: b5fdfb42509974376a7aaa4778f3ec14, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 96512d6939d72ab419bca212ee25b70e, type: 2}
   m_SortingLayerID: 780814655
   m_SortingOrder: 10
   m_Bones: []
