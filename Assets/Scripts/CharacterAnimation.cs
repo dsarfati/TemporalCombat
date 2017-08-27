@@ -15,12 +15,17 @@ public class CharacterAnimation : MonoBehaviour {
             transform.parent.parent.parent.Receive<MoveInput>()
                 .Subscribe(Input =>
                 {
-                    if (Input.XValue < 0)
+                    anim.speed = 1;
+                    if (Input.XValue < -0.1f)
                     {
+                        anim.speed = 2 * Mathf.Abs(Input.XValue);
+
                         transform.localScale = new Vector3(-1, 1, 1);
                     }
-                    else if (Input.XValue > 0)
+                    else if (Input.XValue > 0.1f)
                     {
+                        anim.speed = 2 * Mathf.Abs(Input.XValue);
+
                         transform.localScale = new Vector3(1, 1, 1);
                     }
                     anim.SetFloat("Movement", Mathf.Abs(Input.XValue));
