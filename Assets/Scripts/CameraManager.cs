@@ -35,7 +35,8 @@ namespace Assets.Scripts
                         minY = poss[i].pos.y;
                 }
                 avg.x = (minX + maxX) * 0.5f;
-                avg.y = (minY + maxY) * 0.5f;
+                minY = Mathf.Clamp(minY, -5f, 10f);
+                avg.y =  (minY+ maxY) * 0.5f;
                 avg.z = Mathf.Clamp(-0.5f * Vector2.Distance(new Vector2(minX, minY), new Vector2(maxX, maxY)) / lowerConst, -25f, -8f);
                 //CameraTrans.position = Vector3.MoveTowards(CameraTrans.position, avg, CamSpeed * Time.deltaTime);
                 TargetPos = avg;

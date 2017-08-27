@@ -24,23 +24,23 @@ namespace Assets.Scripts
         {
             Player1Status =
                 InputHandlerSingleton.Instance.Player1Attack.Where(i => i == 3)
-                    .Select(p => 1)
-                    .Merge(InputHandlerSingleton.Instance.Player1Jump.Select(_ => -1))
+                    .Select(p => -1)
+                    .Merge(InputHandlerSingleton.Instance.Player1Jump.Select(_ => 1))
                     .Scan(0, (acc, currentValue) => Mathf.Clamp(acc + currentValue, 0, 2));
             Player2Status =
                 InputHandlerSingleton.Instance.Player2Attack.Where(i => i == 3)
-                    .Select(p => 1)
-                    .Merge(InputHandlerSingleton.Instance.Player2Jump.Select(_ => -1))
+                    .Select(p => -1)
+                    .Merge(InputHandlerSingleton.Instance.Player2Jump.Select(_ => 1))
                     .Scan(0, (acc, currentValue) => Mathf.Clamp(acc + currentValue, 0, 2));
             Player3Status =
                 InputHandlerSingleton.Instance.Player3Attack.Where(i => i == 3)
-                    .Select(p => 1)
-                    .Merge(InputHandlerSingleton.Instance.Player3Jump.Select(_ => -1))
+                    .Select(p => -1)
+                    .Merge(InputHandlerSingleton.Instance.Player3Jump.Select(_ => 1))
                     .Scan(0, (acc, currentValue) => Mathf.Clamp(acc + currentValue, 0, 2));
             Player4Status =
                 InputHandlerSingleton.Instance.Player4Attack.Where(i => i == 3)
-                    .Select(p => 1)
-                    .Merge(InputHandlerSingleton.Instance.Player4Jump.Select(_ => -1))
+                    .Select(p => -1)
+                    .Merge(InputHandlerSingleton.Instance.Player4Jump.Select(_ => 1))
                     .Scan(0, (acc, currentValue) => Mathf.Clamp(acc + currentValue, 0, 2));
 
             PlayersJoined =

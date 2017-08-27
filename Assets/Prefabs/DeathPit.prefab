@@ -127,7 +127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1854555625775856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.54, y: -5.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4465665367907826}
@@ -166,7 +166,7 @@ MonoBehaviour:
   nearestNeighborOrigin: 0
   nearestNeighborOriginVector3: {x: 0, y: 0, z: 0}
   nearestNeighborOriginTransform: {fileID: 0}
-  particleCount: 100
+  particleCount: 500
   emissionRate: 1
   overflowMode: 0
   overflowOffset: {x: 0, y: 0, z: 0}
@@ -182,9 +182,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  sizeMin: 0.2
-  sizeMax: 0.43923444
-  scale: 3.13
+  sizeMin: 1.5
+  sizeMax: 2
+  scale: 1.25
   initialRotationMin: 0
   initialRotationMax: 0
   separateRotationAxes: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   rotateTowardsDirection: 0
   rotationNormal: {x: -0, y: -0, z: -1}
   lifetimeValueMethod: 0
-  lifetime: 1
+  lifetime: 1.5
   lifetimeMin: 0
   lifetimeOffset: 0
   lifetimeEmission: 1
@@ -860,7 +860,7 @@ MonoBehaviour:
   timeOfSnapshot: 0
   isSnapshot: 0
   shurikenParticleSystem: {fileID: 198207327550862044}
-  particleSystemId: 1
+  particleSystemId: 0
   particleSystemGameObject: {fileID: 1854555625775856}
   particleSystemTransform: {fileID: 4697035069295620}
   particleSystemRenderer: {fileID: 199909245744311480}
@@ -881,7 +881,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 7957
+  _randomSeed: 7986
   randomSeedOnEnable: 1
 --- !u!114 &114329878608942590
 MonoBehaviour:
@@ -895,13 +895,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points:
-  - {x: -1.0001006, y: 0, z: 0}
-  - {x: -0.00010049343, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
-  modes: 0000000000000000
+  - {x: -13.089397, y: 0.2717142, z: 0}
+  - {x: -12.089397, y: 0.2717142, z: 0}
+  - {x: -1.2062864, y: 0.663785, z: 0}
+  - {x: -0.20628649, y: 0.663785, z: 0}
+  - {x: 0.7937135, y: 0.663785, z: 0}
+  - {x: 11.157519, y: 0.35557175, z: 0}
+  - {x: 12.157519, y: 0.35557175, z: 0}
+  modes: 000000000000000000000000
   loop: 0
   transformNodes:
+  - enabled: 0
+    transform: {fileID: 0}
+  - enabled: 0
+    transform: {fileID: 0}
+  - enabled: 0
+    transform: {fileID: 0}
   - enabled: 0
     transform: {fileID: 0}
   - enabled: 0
@@ -918,11 +927,11 @@ MonoBehaviour:
     e00: 1
     e01: 0
     e02: 0
-    e03: 0
+    e03: 0.54
     e10: 0
     e11: 1
     e12: 0
-    e13: 0
+    e13: -5.66
     e20: 0
     e21: 0
     e22: 1
@@ -968,13 +977,13 @@ MonoBehaviour:
   nearestNeighborOrigin: 0
   nearestNeighborOriginVector3: {x: 0, y: 0, z: 0}
   nearestNeighborOriginTransform: {fileID: 0}
-  particleCount: 4
+  particleCount: 16
   emissionRate: 1
   overflowMode: 0
   overflowOffset: {x: 0, y: 0, z: 0}
   applySourceScatter: 1
-  sourceScatterMin: {x: -1, y: 0, z: 0}
-  sourceScatterMax: {x: 1, y: 0, z: 0}
+  sourceScatterMin: {x: -10, y: 0, z: 0}
+  sourceScatterMax: {x: 10, y: 0, z: 0}
   scatterScale: {x: 1, y: 1, z: 1}
   sourceScatterMethod: 0
   sorting: 0
@@ -1248,7 +1257,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     y:
       serializedVersion: 2
       m_Curve:
@@ -1266,7 +1275,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     z:
       serializedVersion: 2
       m_Curve:
@@ -1284,7 +1293,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     xRepeat: 1
     yRepeat: 1
     zRepeat: 1
@@ -1505,11 +1514,11 @@ MonoBehaviour:
   sourceTransform: {fileID: 4003639563748372}
   sourceTransforms:
   - transform: {fileID: 4003639563748372}
-    instanceID: -1684562
+    instanceID: -616052
     available: 1
-    position: {x: 0, y: 0, z: 0}
+    position: {x: 0.54, y: -5.66, z: 0}
     localPosition: {x: 0, y: 0, z: 0}
-    previousPosition: {x: 0, y: 0, z: 0}
+    previousPosition: {x: 0.54, y: -5.66, z: 0}
     forward: {x: 0, y: 0, z: 1}
     up: {x: 0, y: 1, z: 0}
     right: {x: 1, y: 0, z: 0}
@@ -1522,11 +1531,11 @@ MonoBehaviour:
       e00: 1
       e01: 0
       e02: 0
-      e03: 0
+      e03: 0.54
       e10: 0
       e11: 1
       e12: 0
-      e13: 0
+      e13: -5.66
       e20: 0
       e21: 0
       e22: 1
@@ -1681,7 +1690,7 @@ MonoBehaviour:
   timeOfSnapshot: 0
   isSnapshot: 0
   shurikenParticleSystem: {fileID: 198868631721712804}
-  particleSystemId: 2
+  particleSystemId: 1
   particleSystemGameObject: {fileID: 1938053296909968}
   particleSystemTransform: {fileID: 4003639563748372}
   particleSystemRenderer: {fileID: 199420031883728546}
@@ -1697,12 +1706,12 @@ MonoBehaviour:
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   prewarm: 0
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 632
+  _randomSeed: 3294
   randomSeedOnEnable: 1
 --- !u!114 &114863458706525404
 MonoBehaviour:
@@ -2014,7 +2023,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     y:
       serializedVersion: 2
       m_Curve:
@@ -2032,7 +2041,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     z:
       serializedVersion: 2
       m_Curve:
@@ -2050,7 +2059,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     xRepeat: 1
     yRepeat: 1
     zRepeat: 1
@@ -2176,9 +2185,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   threadMethod: 0
   multithreadedStartup: 1
-  scriptedEmissionIndex: 2
-  scriptedEmissionPosition: {x: -0.51588744, y: 0.9154661, z: -0.084520034}
-  scriptedEmissionVelocity: {x: 0.252227, y: -0.11213762, z: -0.0100556435}
+  scriptedEmissionIndex: 0
+  scriptedEmissionPosition: {x: 6.83535, y: -4.1035357, z: 0.20146853}
+  scriptedEmissionVelocity: {x: 0.37605706, y: -2.3175726, z: -0.7088884}
   scriptedEmissionColor: {r: 1, g: 0.8039216, b: 0, a: 1}
   collision: 0
   affectRigidbodies: 1
@@ -2427,7 +2436,7 @@ MonoBehaviour:
   timeOfSnapshot: 0
   isSnapshot: 0
   shurikenParticleSystem: {fileID: 198522335985987492}
-  particleSystemId: 3
+  particleSystemId: 2
   particleSystemGameObject: {fileID: 1276266678829600}
   particleSystemTransform: {fileID: 4525783070159860}
   particleSystemRenderer: {fileID: 199263760719222960}
@@ -2449,11 +2458,11 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 7619
+  _randomSeed: 6480
   randomSeedOnEnable: 1
 --- !u!198 &198207327550862044
 ParticleSystem:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1854555625775856}
@@ -2510,7 +2519,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 157243682
+  randomSeed: 1646626360
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2906,7 +2915,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 100
+    maxNumParticles: 500
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -5772,7 +5781,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -31013375
+  randomSeed: -1250484241
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9034,7 +9043,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1108559380
+  randomSeed: -1024138202
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9430,7 +9439,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 4
+    maxNumParticles: 16
     size3D: 0
     rotation3D: 0
     gravityModifier:

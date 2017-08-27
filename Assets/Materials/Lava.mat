@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Lava
-  m_Shader: {fileID: 4800000, guid: 68d2154a43c404a62bb32b2532586aea, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0a654e0c7fa0fb74ebf0ad6c09ae682c, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,11 +19,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AlphaMap:
-        m_Texture: {fileID: 2800000, guid: bca3201d96f9f4b14a11aa221a92e2fa, type: 3}
+        m_Texture: {fileID: 2800000, guid: 28c7aad1372ff114b90d330f8a2dd938, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AlphaMap_copy:
-        m_Texture: {fileID: 2800000, guid: bca3201d96f9f4b14a11aa221a92e2fa, type: 3}
+        m_Texture: {fileID: 2800000, guid: 28c7aad1372ff114b90d330f8a2dd938, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -71,7 +71,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Intensity: 2
+    - _Intensity: 3
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1

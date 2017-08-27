@@ -83,12 +83,12 @@ namespace Assets.Scripts
 
             Player1Attack = this.ObserveEveryValueChanged(_ => Input.GetButton("p1AttackHigh")).Select(h => h ? 1 : 0)
             .Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p1AttackMid"))
-                .Select(h => h ? 2 : 0)).Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p1AttackLow")).Select(h => h ? 3 : 0));
+                .Select(h => h ? 2 : 0)).Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p1Jump")).Select(h => h ? 3 : 0));
             Player1Shadow = this.ObserveEveryValueChanged(_ => Input.GetButton("p1Shadow1")).Select(h => h ? 1 : 0)
                 .Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p1Shadow2")).Select(h => h ? 2 : 0))
                 .Merge(this.ObserveEveryValueChanged(_ => Input.GetAxis("p1Shadow3")).Select(h => h > 0.1f ? 3 : 0))
                 .Merge(this.ObserveEveryValueChanged(_ => Input.GetAxis("p1Shadow4")).Select(h => h > 0.1f ? 4 : 0));
-            Player1Jump = this.ObserveEveryValueChanged(_ => Input.GetButton("p1Jump")).Where(h => h);
+            Player1Jump = this.ObserveEveryValueChanged(_ => Input.GetButton("p1AttackLow")).Where(h => h);
             Player1Move = Observable.EveryUpdate().Select(_ => Input.GetAxis("p1Horizontal"));
 
 
@@ -99,12 +99,12 @@ namespace Assets.Scripts
 
             Player2Attack = this.ObserveEveryValueChanged(_ => Input.GetButton("p2AttackHigh")).Select(h => h ? 1 : 0)
             .Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p2AttackMid"))
-                .Select(h => h ? 2 : 0)).Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p2AttackLow")).Select(h => h ? 3 : 0));
+                .Select(h => h ? 2 : 0)).Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p2Jump")).Select(h => h ? 3 : 0));
             Player2Shadow = this.ObserveEveryValueChanged(_ => Input.GetButton("p2Shadow1")).Select(h => h ? 1 : 0)
                 .Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p2Shadow2")).Select(h => h ? 2 : 0))
                 .Merge(this.ObserveEveryValueChanged(_ => Input.GetAxis("p2Shadow3")).Select(h => h > 0.1f ? 3 : 0))
                 .Merge(this.ObserveEveryValueChanged(_ => Input.GetAxis("p2Shadow4")).Select(h => h > 0.1f ? 4 : 0));
-            Player2Jump = this.ObserveEveryValueChanged(_ => Input.GetButton("p2Jump")).Where(h => h);
+            Player2Jump = this.ObserveEveryValueChanged(_ => Input.GetButton("p2AttackLow")).Where(h => h);
             Player2Move = Observable.EveryUpdate().Select(_ => Input.GetAxis("p2Horizontal"));
 
 
@@ -115,12 +115,12 @@ namespace Assets.Scripts
 
             Player3Attack = this.ObserveEveryValueChanged(_ => Input.GetButton("p3AttackHigh")).Select(h => h ? 1 : 0)
             .Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p3AttackMid"))
-                .Select(h => h ? 2 : 0)).Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p3AttackLow")).Select(h => h ? 3 : 0));
+                .Select(h => h ? 2 : 0)).Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p3Jump")).Select(h => h ? 3 : 0));
             Player3Shadow = this.ObserveEveryValueChanged(_ => Input.GetButton("p3Shadow1")).Select(h => h ? 1 : 0)
                 .Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p3Shadow2")).Select(h => h ? 2 : 0))
                 .Merge(this.ObserveEveryValueChanged(_ => Input.GetAxis("p3Shadow3")).Select(h => h > 0.1f ? 3 : 0))
                 .Merge(this.ObserveEveryValueChanged(_ => Input.GetAxis("p3Shadow4")).Select(h => h > 0.1f ? 4 : 0));
-            Player3Jump = this.ObserveEveryValueChanged(_ => Input.GetButton("p3Jump")).Where(h => h);
+            Player3Jump = this.ObserveEveryValueChanged(_ => Input.GetButton("p3AttackLow")).Where(h => h);
             Player3Move = Observable.EveryUpdate().Select(_ => Input.GetAxis("p3Horizontal"));
 
 
@@ -131,12 +131,12 @@ namespace Assets.Scripts
 
             Player4Attack = this.ObserveEveryValueChanged(_ => Input.GetButton("p4AttackHigh")).Select(h => h ? 1 : 0)
             .Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p4AttackMid"))
-                .Select(h => h ? 2 : 0)).Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p4AttackLow")).Select(h => h ? 3 : 0));
+                .Select(h => h ? 2 : 0)).Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p4Jump")).Select(h => h ? 3 : 0));
             Player4Shadow = this.ObserveEveryValueChanged(_ => Input.GetButton("p4Shadow1")).Select(h => h ? 1 : 0)
                 .Merge(this.ObserveEveryValueChanged(_ => Input.GetButton("p4Shadow2")).Select(h => h ? 2 : 0))
                 .Merge(this.ObserveEveryValueChanged(_ => Input.GetAxis("p4Shadow3")).Select(h => h > 0.1f ? 3 : 0))
                 .Merge(this.ObserveEveryValueChanged(_ => Input.GetAxis("p4Shadow4")).Select(h => h > 0.1f ? 4 : 0));
-            Player4Jump = this.ObserveEveryValueChanged(_ => Input.GetButton("p4Jump")).Where(h => h);
+            Player4Jump = this.ObserveEveryValueChanged(_ => Input.GetButton("p4AttackLow")).Where(h => h);
             Player4Move = Observable.EveryUpdate().Select(_ => Input.GetAxis("p4Horizontal"));
 
 
