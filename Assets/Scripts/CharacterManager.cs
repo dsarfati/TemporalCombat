@@ -30,8 +30,9 @@ public class CharacterManager : MonoBehaviour
     {
     }
 
-    public void Initialize(int playerId)
+    public void Initialize(GameSettings settings)
     {
+        var playerId = settings.PlayerId;
         playerId--;
         GameObject baseSpawn = GameObject.FindGameObjectWithTag("Spawn");
 
@@ -59,6 +60,9 @@ public class CharacterManager : MonoBehaviour
 
         foreach (var character in characters)
         {
+            var helmetMgr = character.GetComponentInChildren<HelmetManager>();
+            helmetMgr.SetHelmet(settings.Helmet);
+
             _characters.Add(character);
             character.Deactivate();
 

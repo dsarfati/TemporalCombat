@@ -7,8 +7,8 @@ public class TestDriver : MonoBehaviour
 {
     void Awake()
     {
-        GameManager.players.Add(new GameSettings() { PlayerId = 1 });
-        GameManager.players.Add(new GameSettings() { PlayerId = 2 });
+        GameManager.players.Add(new GameSettings() { PlayerId = 1, Helmet = Helmet.Knight });
+        GameManager.players.Add(new GameSettings() { PlayerId = 2, Helmet = Helmet.Mohawk });
     }
 
     void Start()
