@@ -507,6 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47cd90fbd649dde46b67692984a7f089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitSfx: {fileID: 11400000, guid: 0757ecad51807a44b898aab3aa401b60, type: 2}
   invincibilityTime: 1000
   currHealth: 1
 --- !u!114 &114034048925463774
