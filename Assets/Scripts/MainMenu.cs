@@ -11,10 +11,10 @@ namespace Assets.Scripts
         // Use this for initialization
         void Awake()
         {
-            InputHandlerSingleton.Instance.Player1Jump
-                .Merge(InputHandlerSingleton.Instance.Player2Jump)
-                .Merge(InputHandlerSingleton.Instance.Player3Jump)
-                .Merge(InputHandlerSingleton.Instance.Player4Jump)
+            InputHandlerSingleton.Instance.Player1Attack
+                .Merge(InputHandlerSingleton.Instance.Player2Attack)
+                .Merge(InputHandlerSingleton.Instance.Player3Attack)
+                .Merge(InputHandlerSingleton.Instance.Player4Attack)
                 .Subscribe(_ =>
                 {
                     UnityEngine.SceneManagement.SceneManager.LoadScene(LevelToLoad);

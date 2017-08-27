@@ -16,7 +16,7 @@ public class CharacterManager : MonoBehaviour
 
     private Dictionary<int, Character> _characters = new Dictionary<int, Character>();
 
-    private string[] titles = { "RB", "RT", "LB", "LT" };
+    private string[] titles = { "RB", "LB", "RT", "LT" };
 
     void Awake()
     {
