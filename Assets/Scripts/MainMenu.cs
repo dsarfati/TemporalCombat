@@ -15,8 +15,10 @@ namespace Assets.Scripts
                 .Merge(InputHandlerSingleton.Instance.Player2Attack)
                 .Merge(InputHandlerSingleton.Instance.Player3Attack)
                 .Merge(InputHandlerSingleton.Instance.Player4Attack)
-                .Subscribe(_ =>
+                .Where(i => i != 0)
+                .Subscribe(i =>
                 {
+                    Debug.Log("Input: " + i);
                     UnityEngine.SceneManagement.SceneManager.LoadScene(LevelToLoad);
                 })
                 .AddTo(this);

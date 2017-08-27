@@ -117,6 +117,7 @@ public class GameManager : MonoBehaviour
     private void RunGameOverSequence()
     {
         Debug.Log("GAME OVER ASDJFKLSDJFFDJSKLDSFKJLDSFJLK");
+
         gameover = true;
     }
 

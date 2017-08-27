@@ -16,17 +16,27 @@ public class CharacterAnimation : MonoBehaviour {
                 .Subscribe(Input =>
                 {
                     anim.speed = 1;
-                    if (Input.XValue < -0.1f)
+                    if (Input.XValue < 0)
                     {
-                        anim.speed = 2 * Mathf.Abs(Input.XValue);
-
                         transform.localScale = new Vector3(-1, 1, 1);
-                    }
-                    else if (Input.XValue > 0.1f)
-                    {
-                        anim.speed = 2 * Mathf.Abs(Input.XValue);
+                        if(Input.XValue < -0.1f)
+                        {
 
+                            anim.speed = 2 * Mathf.Abs(Input.XValue);
+                        }
+                        
+                    }
+                    else if (Input.XValue > 0)
+                    {
                         transform.localScale = new Vector3(1, 1, 1);
+
+                        if(Input.XValue > 0.1f)
+                        {
+                            anim.speed = 2 * Mathf.Abs(Input.XValue);
+
+                        }
+
+                        
                     }
                     anim.SetFloat("Movement", Mathf.Abs(Input.XValue));
 
