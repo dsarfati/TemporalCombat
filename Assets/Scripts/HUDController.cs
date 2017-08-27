@@ -28,7 +28,7 @@ public class HUDController : MonoBehaviour {
             Image playerPlacard = playerStatsObj.transform.GetChild(0).GetComponent<Image>();
             if(playerPlacard != null)
             {
-                playerPlacard.color = palette.HUDColors[i];
+                playerPlacard.color = palette.HUDColors[x-1];
             }
         //}
     }

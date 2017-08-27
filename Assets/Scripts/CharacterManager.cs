@@ -37,7 +37,7 @@ public class CharacterManager : MonoBehaviour
             if (buttonTitle != null)
             {
                 buttonTitle.text = titles[i];
-                buttonTitle.color = palette.TextColors[GetComponent<Player>().playerId];
+                buttonTitle.color = palette.TextColors[GetComponent<Player>().playerId-1];
             }
         }
 

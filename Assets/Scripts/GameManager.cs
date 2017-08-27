@@ -13,62 +13,65 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     public void Awake()
     {
-        foreach (var gs in players)
+        GameObject canvasObj = GameObject.FindGameObjectWithTag("Canvas");
+        if (canvasObj != null)
         {
-            if (gs.PlayerId == -1) continue;
-            //grab gamesettings from stream later
-            print("maaaagic");
-            //for (int i = 0; i < gs.PlayerIds.Length; i++)
-            //{
-            SpawnPlayer(gs.PlayerId);
-            //}
+            GameObject hudObj = Instantiate(hud, canvasObj.transform);
 
-            GameObject canvasObj = GameObject.FindGameObjectWithTag("Canvas");
-            if (canvasObj != null)
-            {
-                GameObject hudObj = Instantiate(hud, canvasObj.transform);
-
-                HUDController hudCtrl = hudObj.GetComponent<HUDController>();
-        this.ReceiveAll<DeathEvent>()
-            .Subscribe(_ =>
-            {
-                CheckGameOver();
-            }).AddTo(this);
-
-        Assets.Scripts.InputHandlerSingleton.Instance.Player1Jump
-            .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player2Jump)
-            .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player3Jump)
-            .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player4Jump)
-            .Subscribe(_ =>
-            {
-                if(gameover)
+            HUDController hudCtrl = hudObj.GetComponent<HUDController>();
+            this.ReceiveAll<DeathEvent>()
+                .Subscribe(_ =>
                 {
-                    UnityEngine.SceneManagement.SceneManager.LoadScene("Arena");
-                }
-            })
-            .AddTo(this);
+                    CheckGameOver();
+                }).AddTo(this);
 
-        Assets.Scripts.InputHandlerSingleton.Instance.Player1Attack
-            .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player2Attack)
-            .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player3Attack)
-            .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player4Attack)
-            .Subscribe(_ =>
-            {
-                if (gameover)
+            Assets.Scripts.InputHandlerSingleton.Instance.Player1Jump
+                .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player2Jump)
+                .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player3Jump)
+                .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player4Jump)
+                .Subscribe(_ =>
                 {
-                    UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
-                }
-            })
-            .AddTo(this);
+                    if (gameover)
+                    {
+                        UnityEngine.SceneManagement.SceneManager.LoadScene("Arena");
+                    }
+                })
+                .AddTo(this);
 
+            Assets.Scripts.InputHandlerSingleton.Instance.Player1Attack
+                .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player2Attack)
+                .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player3Attack)
+                .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player4Attack)
+                .Subscribe(_ =>
+                {
+                    if (gameover)
+                    {
+                        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+                    }
+                })
+                .AddTo(this);
 
+            foreach (var gs in players)
+            {
+                if (gs.PlayerId == -1) continue;
+                //grab gamesettings from stream later
+                print("maaaagic");
+                //for (int i = 0; i < gs.PlayerIds.Length; i++)
+                //{
                 if (hudCtrl != null)
                 {
                     hudCtrl.AddPlayers(gs.PlayerId);
                 }
-            } 
+                SpawnPlayer(gs.PlayerId);
+                //}
+
+
+            }
+            players = new List<GameSettings>();
+
         }
-        players = new List<GameSettings>();
+
+        
     }
 
     //TODO: choose spawnpoints from stage
