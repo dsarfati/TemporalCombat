@@ -83,34 +83,48 @@ public class GameManager : MonoBehaviour
 
     private void RunGameOverSequence()
     {
-        Debug.Log("GAME OVER ASDJFKLSDJFFDJSKLDSFKJLDSFJLK");
-        //stop all movement
-        foreach (var x in GameObject.FindObjectsOfType<CharacterMovement>())
+        if(!gameover)
         {
-            Destroy(x);
-        }
-
-        
-
-        foreach (var character in GameObject.FindGameObjectsWithTag("Character"))
-        {
-            if (character.GetComponent<Character>().IsActive && !character.GetComponent<CharacterHealth>().isDead)
+            gameover = true;
+            Debug.Log("GAME OVER ASDJFKLSDJFFDJSKLDSFKJLDSFJLK");
+            //stop all movement
+            foreach (var x in GameObject.FindObjectsOfType<CharacterMovement>())
             {
-
-                Vector3 spawnPos = character.transform.position;
-                Vector3 camTarget = spawnPos + new Vector3(0, 3, 0);
-                for (int i = 0; i < 10; i++)
-                {
-                    this.Send(new PositionUpdate(camTarget + new Vector3(5, 0, 0), Vector3.zero));
-                    this.Send(new PositionUpdate(camTarget + new Vector3(-5, 0, 0), Vector3.zero));
-                }
-                spawnPos.y = 10;
-                Instantiate(boulder, spawnPos, Quaternion.identity);
-                break;
+                Destroy(x);
             }
-        }
 
-        gameover = true;
+
+            foreach (var character in GameObject.FindGameObjectsWithTag("Character"))
+            {
+                
+                if(character != null)
+                {
+                    var charScript = character.GetComponent<Character>();
+                    var healthScript = character.GetComponent<CharacterHealth>();
+                    if (charScript != null && charScript.IsActive && healthScript != null && !healthScript.isDead)
+                    {
+                        character.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                        Vector3 spawnPos = character.transform.position;
+                        Vector3 camTarget = spawnPos + new Vector3(0, 0, 0);
+                        for (int i = 0; i < 10; i++)
+                        {
+                            this.Send(new PositionUpdate(camTarget + new Vector3(5, 0, 0), Vector3.zero));
+                            this.Send(new PositionUpdate(camTarget + new Vector3(-5, 0, 0), Vector3.zero));
+                        }
+                        spawnPos.y = 10;
+                        boulder.transform.position = spawnPos;
+                        boulder.SetActive(true);
+                    }
+                    else
+                    {
+                        Destroy(character);
+                    }
+                }
+                
+            }
+
+        }
     }
+        
 
 }
