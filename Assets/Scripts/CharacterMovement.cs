@@ -26,8 +26,8 @@ public class CharacterMovement : MonoBehaviour
 
         this.transform.parent.Receive<MoveInput>().Where(_ => _isActive).Subscribe(input =>
         {
-            this.Send(new PositionUpdate(transform.position));
             rigidbody.velocity = new Vector2(input.XValue * _moveSpeed, rigidbody.velocity.y);
+            this.Send(new PositionUpdate(transform.position, rigidbody.velocity));
         }).AddTo(this);
 
         this.transform.parent.Receive<JumpInput>().Where(_ => _isActive).Subscribe(_ =>
