@@ -449,6 +449,48 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1720073144}
   m_Script: {fileID: 11500000, guid: a095f32c8084a4b1ba25c9153255dd10, type: 3}
+--- !u!1001 &1131575487
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4211476674023158, guid: 6b49dce6ee33ff946a38722ae43b10ba, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211476674023158, guid: 6b49dce6ee33ff946a38722ae43b10ba, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211476674023158, guid: 6b49dce6ee33ff946a38722ae43b10ba, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211476674023158, guid: 6b49dce6ee33ff946a38722ae43b10ba, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211476674023158, guid: 6b49dce6ee33ff946a38722ae43b10ba, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211476674023158, guid: 6b49dce6ee33ff946a38722ae43b10ba, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211476674023158, guid: 6b49dce6ee33ff946a38722ae43b10ba, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211476674023158, guid: 6b49dce6ee33ff946a38722ae43b10ba, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6b49dce6ee33ff946a38722ae43b10ba, type: 2}
+  m_IsPrefabParent: 0
 --- !u!114 &1196845801 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114054851093784988, guid: b05b6109bd587be4fad01deafc3eee7f,

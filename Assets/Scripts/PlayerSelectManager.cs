@@ -15,6 +15,8 @@ namespace Assets.Scripts
         private IObservable<int> PlayersReady;
         private int[] playersToPass = new int[4];
 
+        public static Helmet[] Helmets = new Helmet[4];
+
         private void Awake()
         {
             var ih = InputHandlerSingleton.Instance;
@@ -86,7 +88,7 @@ namespace Assets.Scripts
                     for (int i = 0; i < playersToPass.Length; i++)
                     {
                         if (playersToPass[i] != -1)
-                            GameManager.players.Add(new GameSettings {PlayerId = playersToPass[i]});
+                            GameManager.players.Add(new GameSettings { PlayerId = playersToPass[i], Helmet = Helmets[i] });
                     }
                     UnityEngine.SceneManagement.SceneManager.LoadScene(LevelToLoad);
                 }
