@@ -17,6 +17,11 @@ public class HUDController : MonoBehaviour {
         //for(int i = 0; i < x.Length; i++)
         //{
             GameObject playerStatsObj = Instantiate(playerStats, transform);
+            LifeCounter counter = playerStatsObj.GetComponentInChildren<LifeCounter>();
+            if(counter != null)
+            {
+                counter.playerId = i;
+            }
             Text playerName = playerStatsObj.GetComponentInChildren<Text>();
             playerName.text = "Player " + (x);
             Image playerPlacard = playerStatsObj.transform.GetChild(0).GetComponent<Image>();

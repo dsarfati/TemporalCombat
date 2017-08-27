@@ -27,7 +27,16 @@ public class GameManager : MonoBehaviour
             {
                 GameObject hudObj = Instantiate(hud, canvasObj.transform);
 
+<<<<<<< HEAD
                 HUDController hudCtrl = hudObj.GetComponent<HUDController>();
+=======
+        this.ReceiveAll<DeathEvent>()
+            .Subscribe(_ =>
+            {
+                CheckGameOver();
+            });
+
+>>>>>>> 947649d6e054452d55bf14411f7e9a7526493de6
 
                 if (hudCtrl != null)
                 {
@@ -44,6 +53,12 @@ public class GameManager : MonoBehaviour
 
         GameObject newPlayer = Instantiate(player);
         newPlayer.name = "Player " + i;
+        Player playerScript = newPlayer.GetComponent<Player>();
+        if(playerScript != null)
+        {
+            playerScript.playerId = i;
+        }
+        
         Assets.Scripts.ControllerInput inputScript = newPlayer.GetComponent<Assets.Scripts.ControllerInput>();
         if (inputScript != null)
         {
@@ -51,6 +66,30 @@ public class GameManager : MonoBehaviour
             newPlayer.GetComponent<CharacterManager>().Initialize(i);
         }
 
+    }
+
+    private void CheckGameOver()
+    {
+        Debug.Log("CHGECKING GAME OVER");
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        int numPlayersAlive = 0;
+        foreach(var player in players)
+        {
+            if(player.GetComponent<PlayerManager>().CheckAlive())
+            {
+                numPlayersAlive++;
+            }
+        }
+
+        if(numPlayersAlive <= 1)
+        {
+            RunGameOverSequence();
+        }
+    }
+
+    private void RunGameOverSequence()
+    {
+        Debug.Log("GAME OVER ASDJFKLSDJFFDJSKLDSFKJLDSFJLK");
     }
 
 }
