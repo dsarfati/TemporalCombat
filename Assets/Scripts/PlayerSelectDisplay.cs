@@ -53,7 +53,7 @@ public class PlayerSelectDisplay : MonoBehaviour
         _selectText.SetActive(false);
         _readyText.SetActive(false);
 
-        _joinText.
+        //_joinText.
 
         foreach (var arrow in _arrows)
         {

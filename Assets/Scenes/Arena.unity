@@ -806,7 +806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraTrans: {fileID: 1179585543}
   TargetPos: {x: 0, y: 0, z: 0}
-  CamSpeed: 5
+  CamSpeed: 6
   ViewportMinOffset: -4.5
 --- !u!4 &535118150
 Transform:
@@ -3265,7 +3265,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 7
+  _randomSeed: 8978
   randomSeedOnEnable: 1
 --- !u!199 &1410908531
 ParticleSystemRenderer:
@@ -3378,7 +3378,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1804502641
+  randomSeed: -1592023726
   InitialModule:
     serializedVersion: 3
     enabled: 1
