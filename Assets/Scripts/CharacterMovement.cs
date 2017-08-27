@@ -12,7 +12,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private float _jumpSpeed = 1;
 
-    public SimpleAudioEvent jumpSfx;
+    public AudioEvent jumpSfx;
 
     private bool _isActive = false;
 
