@@ -12,50 +12,51 @@ public class CharacterAnimation : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
-        if (anim != null)
+
+        if (anim == null || transform.parent.parent == null)
         {
-            transform.parent.parent.Receive<MoveInput>().Where(_ => anim.enabled)
-                .Subscribe(Input =>
-                {
-                    anim.speed = 1;
-                    if (Input.XValue < 0)
-                    {
-                        transform.localScale = new Vector3(-1, 1, 1);
-                        if(Input.XValue < -0.1f)
-                        {
-
-                            anim.speed = 2 * Mathf.Abs(Input.XValue);
-                        }
-                        
-                    }
-                    else if (Input.XValue > 0)
-                    {
-                        transform.localScale = new Vector3(1, 1, 1);
-
-                        if(Input.XValue > 0.1f)
-                        {
-                            anim.speed = 2 * Mathf.Abs(Input.XValue);
-
-                        }
-
-                        
-                    }
-                    anim.SetFloat("Movement", Mathf.Abs(Input.XValue));
-
-                }).AddTo(this);
-
-            transform.parent.parent.Receive<AttackInput>()
-            .Where(_ => anim.enabled)
-                .Subscribe(Input =>
-                {
-
-                    anim.SetTrigger("Attacking");
-
-
-                }).AddTo(this);
+            Debug.LogWarning("CharacterAnimation will not be connected to any input");
+            return;
         }
 
+        transform.parent.parent.Receive<MoveInput>().Where(_ => anim.enabled)
+            .Subscribe(Input =>
+            {
+                anim.speed = 1;
+                if (Input.XValue < 0)
+                {
+                    transform.localScale = new Vector3(-1, 1, 1);
+                    if (Input.XValue < -0.1f)
+                    {
 
+                        anim.speed = 2 * Mathf.Abs(Input.XValue);
+                    }
+
+                }
+                else if (Input.XValue > 0)
+                {
+                    transform.localScale = new Vector3(1, 1, 1);
+
+                    if (Input.XValue > 0.1f)
+                    {
+                        anim.speed = 2 * Mathf.Abs(Input.XValue);
+
+                    }
+
+
+                }
+                anim.SetFloat("Movement", Mathf.Abs(Input.XValue));
+
+            }).AddTo(this);
+
+        transform.parent.parent.Receive<AttackInput>()
+        .Where(_ => anim.enabled)
+            .Subscribe(Input =>
+            {
+
+                anim.SetTrigger("Attacking");
+
+
+            }).AddTo(this);
     }
-
 }

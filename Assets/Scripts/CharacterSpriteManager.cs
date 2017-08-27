@@ -25,9 +25,6 @@ public class CharacterSpriteManager : MonoBehaviour
         var animatedSprite = Instantiate(_characterSprite, transform);
         _animator = animatedSprite.GetComponentInChildren<Animator>();
 
-        var sprites = this.GetComponentsInChildren<SpriteRenderer>();
-        var meshes = this.GetComponentsInChildren<Anima2D.SpriteMeshInstance>();
-
         this.Receive<CharacterActivated>().Subscribe(c =>
         {
             if (c.IsActivated)
@@ -35,30 +32,14 @@ public class CharacterSpriteManager : MonoBehaviour
                 _characterInfo.SetActive(true);
                 _animator.enabled = true;
 
-                foreach (var sprite in sprites)
-                {
-                    sprite.material = _normalMaterial;
-                }
-
-                foreach (var mesh in meshes)
-                {
-                    mesh.sharedMaterial = _normalMaterial;
-                }
+                this.gameObject.SetMaterial(_normalMaterial);
             }
             else
             {
                 _characterInfo.SetActive(false);
                 _animator.enabled = false;
 
-                foreach (var sprite in sprites)
-                {
-                    sprite.material = _ghostMaterial;
-                }
-
-                foreach (var mesh in meshes)
-                {
-                    mesh.sharedMaterial = _ghostMaterial;
-                }
+                this.gameObject.SetMaterial(_ghostMaterial);
             }
 
         }).AddTo(this);
