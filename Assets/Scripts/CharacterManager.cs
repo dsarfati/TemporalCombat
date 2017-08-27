@@ -27,7 +27,7 @@ public class CharacterManager : MonoBehaviour
         GameObject baseSpawn = GameObject.FindGameObjectWithTag("Spawn");
 
         Debug.Log(baseSpawn.name + " Access " + x + " out of " + baseSpawn.transform.childCount);
-        Transform spawnSet = baseSpawn.transform.GetChild(x-1);
+        Transform spawnSet = baseSpawn.transform.GetChild(x - 1);
 
         for (int i = 0; i < 4; i++)
         {
@@ -37,7 +37,7 @@ public class CharacterManager : MonoBehaviour
             if (buttonTitle != null)
             {
                 buttonTitle.text = titles[i];
-                buttonTitle.color = palette.TextColors[GetComponent<Player>().playerId-1];
+                buttonTitle.color = palette.TextColors[GetComponent<Player>().playerId - 1];
             }
         }
 
@@ -52,9 +52,6 @@ public class CharacterManager : MonoBehaviour
 
             character.Receive<DeathEvent>().Subscribe(CharacterDied).AddTo(this);
         }
-
-       
-
 
         ActivateCharacter(0);
     }

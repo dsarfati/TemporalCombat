@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 
-public class CharacterAnimation : MonoBehaviour {
+public class CharacterAnimation : MonoBehaviour
+{
 
     Animator anim;
 
-	// Use this for initialization
-	void Awake () {
+    // Use this for initialization
+    void Awake()
+    {
         anim = GetComponent<Animator>();
-        if(anim != null)
+        if (anim != null)
         {
-            transform.parent.parent.parent.Receive<MoveInput>()
+            transform.parent.parent.Receive<MoveInput>().Where(_ => anim.enabled)
                 .Subscribe(Input =>
                 {
                     anim.speed = 1;
@@ -42,12 +44,13 @@ public class CharacterAnimation : MonoBehaviour {
 
                 }).AddTo(this);
 
-            transform.parent.parent.parent.Receive<AttackInput>()
+            transform.parent.parent.Receive<AttackInput>()
+            .Where(_ => anim.enabled)
                 .Subscribe(Input =>
                 {
-                    
+
                     anim.SetTrigger("Attacking");
-                    
+
 
                 }).AddTo(this);
         }
