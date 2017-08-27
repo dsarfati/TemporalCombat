@@ -3320,7 +3320,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 8928
+  _randomSeed: 3519
   randomSeedOnEnable: 1
 --- !u!199 &1410908531
 ParticleSystemRenderer:
@@ -3433,7 +3433,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1362101614
+  randomSeed: 497375910
   InitialModule:
     serializedVersion: 3
     enabled: 1
