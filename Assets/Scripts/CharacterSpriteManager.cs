@@ -7,6 +7,9 @@ using System.Linq;
 public class CharacterSpriteManager : MonoBehaviour
 {
     [SerializeField]
+    private GameObject _characterSprite;
+
+    [SerializeField]
     private Material _ghostMaterial;
 
     [SerializeField]
@@ -15,11 +18,13 @@ public class CharacterSpriteManager : MonoBehaviour
     [SerializeField]
     private GameObject _characterInfo;
 
-    [SerializeField]
     private Animator _animator;
 
     void Awake()
     {
+        var animatedSprite = Instantiate(_characterSprite, transform);
+        _animator = animatedSprite.GetComponentInChildren<Animator>();
+
         var sprites = this.GetComponentsInChildren<SpriteRenderer>();
         var meshes = this.GetComponentsInChildren<Anima2D.SpriteMeshInstance>();
 

@@ -16,29 +16,39 @@ public class CharacterManager : MonoBehaviour
 
     private Dictionary<int, Character> _characters = new Dictionary<int, Character>();
 
+    private int _characterIndex = 0;
+
+    private const int NEXT_CODE = 1;
+    private const int PREVIOUS_CODE = 0;
+
+
     private string[] titles = { "RB", "LB", "RT", "LT" };
 
     void Awake()
     {
     }
 
-    public void Initialize(int x)
+    public void Initialize(int playerId)
     {
+        playerId--;
         GameObject baseSpawn = GameObject.FindGameObjectWithTag("Spawn");
 
-        Debug.Log(baseSpawn.name + " Access " + x + " out of " + baseSpawn.transform.childCount);
-        Transform spawnSet = baseSpawn.transform.GetChild(x - 1);
+        Debug.Log(baseSpawn.name + " Access " + playerId + " out of " + baseSpawn.transform.childCount);
+        Transform spawnSet = baseSpawn.transform.GetChild(playerId);
 
         for (int i = 0; i < 4; i++)
         {
+            var characterColor = palette.TextColors[playerId];
             GameObject characterObj = Instantiate(characterPrefab, spawnSet.GetChild(i).position, Quaternion.identity, transform);
             characterObj.SetActive(true);
             TextMesh buttonTitle = characterObj.GetComponentInChildren<TextMesh>();
             if (buttonTitle != null)
             {
                 buttonTitle.text = titles[i];
-                buttonTitle.color = palette.TextColors[GetComponent<Player>().playerId - 1];
+                buttonTitle.color = characterColor;
             }
+
+            characterObj.transform.FindDeepChild("Body").GetComponent<SpriteRenderer>().color = characterColor;
         }
 
         var characters = GetComponentsInChildren<Character>();
@@ -53,16 +63,34 @@ public class CharacterManager : MonoBehaviour
             character.Receive<DeathEvent>().Subscribe(CharacterDied).AddTo(this);
         }
 
-        ActivateCharacter(0);
+        //Activate the first character
+        ActivateCharacter(characters[_characterIndex]);
     }
 
-    public void ActivateCharacter(int characterNum)
+    public void ActivateCharacter(int characterDirection)
     {
+        //Previous
+        if (characterDirection == PREVIOUS_CODE)
+        {
+            _characterIndex--;
+
+            if (_characterIndex < 0)
+                _characterIndex = _characters.Count - 1;
+        }
+        //Next
+        else if (characterDirection == NEXT_CODE)
+        {
+            _characterIndex++;
+
+            if (_characterIndex >= _characters.Count)
+                _characterIndex = 0;
+        }
+
         Character newCharacter;
 
-        if (!_characters.TryGetValue(characterNum, out newCharacter))
+        if (!_characters.TryGetValue(_characterIndex, out newCharacter))
         {
-            Debug.LogErrorFormat("Invalid character index {0}", characterNum);
+            Debug.LogErrorFormat("Invalid character index {0}", _characterIndex);
             return;
         }
 
@@ -87,27 +115,8 @@ public class CharacterManager : MonoBehaviour
 
     private void CharacterDied(DeathEvent death)
     {
-        //Get the position of the death to find the next closest player
-        var pos = death.Character.transform.position;
-
-        var bestDist = float.MaxValue;
-        Character bestCharacter = null;
-
-        foreach (var character in _characters.Values)
-        {
-            if (character == null || character == death.Character)
-                continue;
-
-            var dist = Vector2.Distance(character.transform.position, pos);
-
-            if (dist > bestDist)
-                continue;
-
-            bestDist = dist;
-            bestCharacter = character;
-        }
-
-        ActivateCharacter(bestCharacter);
+        // ActivateCharacter(bestCharacter);
+        ActivateCharacter(NEXT_CODE);
     }
 
     public void MoveToSpawn()
