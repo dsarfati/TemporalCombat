@@ -1124,6 +1124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6194995d8e9d70b4e9c029aa490781fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelToLoad: Arena
 --- !u!1 &844623633
 GameObject:
   m_ObjectHideFlags: 0

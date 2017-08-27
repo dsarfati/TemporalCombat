@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UniRx;
 
 namespace Assets.Scripts
@@ -12,6 +13,7 @@ namespace Assets.Scripts
         internal IObservable<int> Player4Status;
         private IObservable<int> PlayersJoined;
         private IObservable<int> PlayersReady;
+        private int[] playersToPass = new int[4];
 
         private void Awake()
         {
@@ -20,7 +22,6 @@ namespace Assets.Scripts
 
         private void Start()
         {
-            print("player select manager start ran");
             Player1Status =
                 InputHandlerSingleton.Instance.Player1Attack.Where(i => i == 3)
                     .Select(p => 1)
@@ -41,18 +42,29 @@ namespace Assets.Scripts
                     .Select(p => 1)
                     .Merge(InputHandlerSingleton.Instance.Player4Jump.Select(_ => -1))
                     .Scan(0, (acc, currentValue) => Mathf.Clamp(acc + currentValue, 0, 2));
-            //Player1Status.Subscribe(i => print(i));
-            Player3Status.Subscribe(i => print("player 3 status " + i));
+
             PlayersJoined =
-                Player1Status.Select(s => s > 0 ? 1 : 0).StartWith(0).DistinctUntilChanged()
+                Player1Status.Select(s => s > 0 ? 1 : 0).StartWith(0).DistinctUntilChanged().Do(p1 =>
+                    {
+                        playersToPass[0] = p1 == 1 ? 1 : -1;
+                    })
                     .CombineLatest(
-                        Player2Status.Select(s => s > 0 ? 1 : 0).StartWith(0).DistinctUntilChanged(),
+                        Player2Status.Select(s => s > 0 ? 1 : 0).StartWith(0).DistinctUntilChanged().Do(p1 =>
+                        {
+                            playersToPass[1] = p1 == 1 ? 2 : -1;
+                        }),
                         (acc, currentValue) => acc + currentValue)
                     .CombineLatest(
-                        Player3Status.Select(s => s > 0 ? 1 : 0).StartWith(0).DistinctUntilChanged(),
+                        Player3Status.Select(s => s > 0 ? 1 : 0).StartWith(0).DistinctUntilChanged().Do(p1 =>
+                        {
+                            playersToPass[2] = p1 == 1 ? 3 : -1;
+                        }),
                         (acc, currentValue) => acc + currentValue)
                     .CombineLatest(
-                        Player4Status.Select(s => s > 0 ? 1 : 0).StartWith(0).DistinctUntilChanged(),
+                        Player4Status.Select(s => s > 0 ? 1 : 0).StartWith(0).DistinctUntilChanged().Do(p1 =>
+                        {
+                            playersToPass[3] = p1 == 1 ? 4 : -1;
+                        }),
                         (acc, currentValue) => acc + currentValue);
             PlayersReady =
                 Player1Status.Select(s => s > 1 ? 1 : 0).StartWith(0).DistinctUntilChanged()
@@ -69,9 +81,16 @@ namespace Assets.Scripts
             //PlayersReady.Subscribe(i => print("players ready " + i));
             PlayersJoined.CombineLatest(PlayersReady, (joined, ready) => joined > 1 && ready == joined).Subscribe(t =>
             {
-                if(t)
+                if (t)
+                {
+                    for (int i = 0; i < playersToPass.Length; i++)
+                    {
+                        if (playersToPass[i] != -1)
+                            GameManager.players.Add(new GameSettings {PlayerId = playersToPass[i]});
+                    }
                     UnityEngine.SceneManagement.SceneManager.LoadScene(LevelToLoad);
-            });
+                }
+            }).AddTo(this);
         }
     }
 }

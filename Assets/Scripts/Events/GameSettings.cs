@@ -1,4 +1,4 @@
 ﻿public struct GameSettings
 {
-    public int numPlayers;
+    public int PlayerId;
 }

@@ -21,8 +21,6 @@ public class AttackManager : MonoBehaviour
         var character = this.GetComponentInParent<Character>();
         var player = character.transform.parent;
 
-        print(player.name);
-
         player.transform.Receive<MoveInput>().Where(_ => character.IsActive).Subscribe(m =>
           {
               transform.localPosition = new Vector2(startPosition * Mathf.Sign(m.XValue), transform.localPosition.y);
