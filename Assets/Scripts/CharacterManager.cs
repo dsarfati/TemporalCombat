@@ -27,7 +27,7 @@ public class CharacterManager : MonoBehaviour
 
 
         Debug.Log(baseSpawn.name + " Access " + x + " out of " + baseSpawn.transform.childCount);
-        Transform spawnSet = baseSpawn.transform.GetChild(x);
+        Transform spawnSet = baseSpawn.transform.GetChild(x-1);
 
         for (int i = 0; i < 4; i++)
         {

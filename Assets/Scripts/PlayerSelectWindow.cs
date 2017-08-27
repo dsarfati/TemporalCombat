@@ -19,7 +19,6 @@ namespace Assets.Scripts
 
         private void Start()
         {
-            print("player select window " + PlayerNumber + " start ran");
             var control = InputHandlerSingleton.Instance.Player1Move;
             var isReady = psMan.Player1Status.StartWith(0);
             switch (PlayerNumber)
@@ -41,7 +40,7 @@ namespace Assets.Scripts
             {
                 Prompt.SetActive(i == 0);
                 Ready.SetActive(i == 2);
-            });
+            }).AddTo(this);
             control.DelayFrame(1)
                 .Select(i => i > 0 ? 1 : i < 0 ? -1 : 0)
                 .DistinctUntilChanged()
@@ -59,7 +58,7 @@ namespace Assets.Scripts
                         currCharacter = Characters.Count - 1;
                     }
                     Display.sprite = Characters[currCharacter];
-                });
+                }).AddTo(this);
         }
     }
 }

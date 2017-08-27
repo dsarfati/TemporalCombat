@@ -5,36 +5,30 @@ using UniRx;
 
 public class GameManager : MonoBehaviour
 {
-
+    public static List<GameSettings> players = new List<GameSettings>();
     public GameObject player;
     public GameObject hud;
     private bool gameover = false;
 
     // Use this for initialization
-    void Awake()
+    public void Awake()
     {
-        //grab gamesettings from stream later
-        GameSettings gs;
-        gs.numPlayers = 4;
-        
-        for (int i = 0; i < gs.numPlayers; i++)
+        foreach (var gs in players)
         {
-            SpawnPlayer(i);
-        }
+            if (gs.PlayerId == -1) continue;
+            //grab gamesettings from stream later
+            print("maaaagic");
+            //for (int i = 0; i < gs.PlayerIds.Length; i++)
+            //{
+            SpawnPlayer(gs.PlayerId);
+            //}
 
-        GameObject canvasObj = GameObject.FindGameObjectWithTag("Canvas");
-        if (canvasObj != null)
-        {
-            GameObject hudObj = Instantiate(hud, canvasObj.transform);
-
-            HUDController hudCtrl = hudObj.GetComponent<HUDController>();
-
-            if (hudCtrl != null)
+            GameObject canvasObj = GameObject.FindGameObjectWithTag("Canvas");
+            if (canvasObj != null)
             {
-                hudCtrl.AddPlayers(gs.numPlayers);
-            }
-        }
+                GameObject hudObj = Instantiate(hud, canvasObj.transform);
 
+                HUDController hudCtrl = hudObj.GetComponent<HUDController>();
         this.ReceiveAll<DeathEvent>()
             .Subscribe(_ =>
             {
@@ -68,6 +62,13 @@ public class GameManager : MonoBehaviour
             .AddTo(this);
 
 
+                if (hudCtrl != null)
+                {
+                    hudCtrl.AddPlayers(gs.PlayerId);
+                }
+            } 
+        }
+        players = new List<GameSettings>();
     }
 
     //TODO: choose spawnpoints from stage
@@ -85,7 +86,7 @@ public class GameManager : MonoBehaviour
         Assets.Scripts.ControllerInput inputScript = newPlayer.GetComponent<Assets.Scripts.ControllerInput>();
         if (inputScript != null)
         {
-            inputScript.PlayerNumber = i;
+            inputScript.PlayerNumber = i-1;
             newPlayer.GetComponent<CharacterManager>().Initialize(i);
         }
 

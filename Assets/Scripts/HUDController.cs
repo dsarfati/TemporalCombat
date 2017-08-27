@@ -15,21 +15,21 @@ public class HUDController : MonoBehaviour {
 
     public void AddPlayers(int x)
     {
-        for(int i = 0; i < x; i++)
-        {
+        //for(int i = 0; i < x.Length; i++)
+        //{
             GameObject playerStatsObj = Instantiate(playerStats, transform);
             LifeCounter counter = playerStatsObj.GetComponentInChildren<LifeCounter>();
             if(counter != null)
             {
-                counter.playerId = i;
+                counter.playerId = x;
             }
             Text playerName = playerStatsObj.GetComponentInChildren<Text>();
-            playerName.text = "Player " + (i + 1);
+            playerName.text = "Player " + (x);
             Image playerPlacard = playerStatsObj.transform.GetChild(0).GetComponent<Image>();
             if(playerPlacard != null)
             {
                 playerPlacard.color = palette.HUDColors[i];
             }
-        }
+        //}
     }
 }
