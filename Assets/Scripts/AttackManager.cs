@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 
-[RequireComponent(typeof(Collider2D))]
 public class AttackManager : MonoBehaviour
 {
     [SerializeField]
@@ -13,8 +12,6 @@ public class AttackManager : MonoBehaviour
 
     void Awake()
     {
-        var collider = GetComponent<Collider2D>();
-
         //Assumes the starting position is on the left side of the character
         var startPosition = transform.localPosition.x;
 
@@ -23,7 +20,7 @@ public class AttackManager : MonoBehaviour
 
         player.transform.Receive<MoveInput>().Where(_ => character.IsActive).Subscribe(m =>
           {
-              if(this != null)
+              if (this != null && m.XValue != 0)
               {
                   transform.localPosition = new Vector2(startPosition * Mathf.Sign(m.XValue), transform.localPosition.y);
               }

@@ -2,32 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
+using System.Linq;
 
 public class CharacterSpriteManager : MonoBehaviour
 {
+    [SerializeField]
+    private Material _ghostMaterial;
 
     [SerializeField]
-    private GameObject _activeSprite;
+    private Material _normalMaterial;
 
     [SerializeField]
-    private GameObject _inActiveSprite;
+    private GameObject _characterInfo;
+
+    [SerializeField]
+    private Animator _animator;
 
     void Awake()
     {
-        this.Receive<CharacterActivated>().Subscribe(CharacterActivated).AddTo(this);
-    }
+        var sprites = this.GetComponentsInChildren<SpriteRenderer>();
+        var meshes = this.GetComponentsInChildren<Anima2D.SpriteMeshInstance>();
 
-    private void CharacterActivated(CharacterActivated message)
-    {
-        if (message.IsActivated)
+        this.Receive<CharacterActivated>().Subscribe(c =>
         {
-            _activeSprite.gameObject.SetActive(true);
-            _inActiveSprite.gameObject.SetActive(false);
-        }
-        else
-        {
-            _activeSprite.gameObject.SetActive(false);
-            _inActiveSprite.gameObject.SetActive(true);
-        }
+            if (c.IsActivated)
+            {
+                _characterInfo.SetActive(true);
+                _animator.enabled = true;
+
+                foreach (var sprite in sprites)
+                {
+                    sprite.material = _normalMaterial;
+                }
+
+                foreach (var mesh in meshes)
+                {
+                    mesh.sharedMaterial = _normalMaterial;
+                }
+            }
+            else
+            {
+                _characterInfo.SetActive(false);
+                _animator.enabled = false;
+
+                foreach (var sprite in sprites)
+                {
+                    sprite.material = _ghostMaterial;
+                }
+
+                foreach (var mesh in meshes)
+                {
+                    mesh.sharedMaterial = _ghostMaterial;
+                }
+            }
+
+        }).AddTo(this);
     }
 }

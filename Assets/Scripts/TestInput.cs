@@ -9,10 +9,16 @@ public class TestInput : MonoBehaviour
     void Awake()
     {
         _characterManager = GetComponent<CharacterManager>();
+
     }
 
     void Update()
     {
+        var player = this.GetComponentInParent<Player>();
+
+        if (player.playerId != 1)
+            return;
+
         //Switch between players
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -34,8 +40,10 @@ public class TestInput : MonoBehaviour
         //Movement
         if (Input.GetKey(KeyCode.RightArrow))
             this.Send(new MoveInput(1));
-        if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow))
             this.Send(new MoveInput(-1));
+        else
+            this.Send(new MoveInput(0));
 
         //Jump
         if (Input.GetKeyDown(KeyCode.UpArrow))
