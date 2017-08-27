@@ -19,6 +19,23 @@ public static class Extensions
         return null;
     }
 
+    public static void SetMaterial(this GameObject go, Material mat)
+    {
+        var sprites = go.GetComponentsInChildren<SpriteRenderer>();
+        var meshes = go.GetComponentsInChildren<Anima2D.SpriteMeshInstance>();
+
+        foreach (var sprite in sprites)
+        {
+            sprite.material = mat;
+        }
+
+        foreach (var mesh in meshes)
+        {
+            mesh.sharedMaterial = mat;
+            mesh.color = mat.color;
+        }
+    }
+
 
     /*
     //Depth-first search

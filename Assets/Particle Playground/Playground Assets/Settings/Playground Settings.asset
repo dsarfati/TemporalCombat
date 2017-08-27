@@ -48,7 +48,7 @@ MonoBehaviour:
   particleSettingsScatterFoldout: 1
   particleSettingsEmissionFoldout: 1
   particleSettingsSizeFoldout: 1
-  particleSettingsRotationFoldout: 0
+  particleSettingsRotationFoldout: 1
   particleSettingsLifetimeFoldout: 1
   particleSettingsMaskFoldout: 0
   forceAnnihilationFoldout: 0

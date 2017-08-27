@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 
+public enum Helmet
+{
+    Hair,
+    Viking,
+    Knight,
+    Skull,
+    Mohawk
+}
+
 public class Character : MonoBehaviour
 {
     public bool IsActive { get; private set; }
