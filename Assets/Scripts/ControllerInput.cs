@@ -48,8 +48,8 @@ namespace Assets.Scripts
                 print("attack sent");
                 this.Send(new AttackInput());
             });
-            move.Subscribe(f => this.Send(new MoveInput(f)));
-            jump.Subscribe(b => this.Send(new JumpInput()));
+            move.Subscribe(f => this.Send(new MoveInput(f))).AddTo(this);
+            jump.Subscribe(b => this.Send(new JumpInput())).AddTo(this);
 
         }
 
