@@ -40,6 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54074cd302c61694bb1b8aee54cf9ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  palette: {fileID: 11400000, guid: 782cb46d2888b5949bcd74872bdc4d93, type: 2}
   playerStats: {fileID: 1827763599002310, guid: b0e61ff06ac0e2043bd3bfa3187baf67,
     type: 2}
 --- !u!114 &114415981766541762

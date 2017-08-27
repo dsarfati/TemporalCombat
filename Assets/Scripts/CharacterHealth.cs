@@ -29,7 +29,7 @@ public class CharacterHealth : MonoBehaviour
             {
                 Debug.Log(gameObject.name + " Colliding with " + coll.gameObject.name);
                 TakeDamage(1);
-            });
+            }).AddTo(this);
     }
 
     public void TakeDamage(int dmg)

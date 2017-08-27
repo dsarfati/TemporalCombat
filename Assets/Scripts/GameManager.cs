@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject player;
     public GameObject hud;
+    private bool gameover = false;
 
     // Use this for initialization
     void Awake()
@@ -38,7 +39,33 @@ public class GameManager : MonoBehaviour
             .Subscribe(_ =>
             {
                 CheckGameOver();
-            });
+            }).AddTo(this);
+
+        Assets.Scripts.InputHandlerSingleton.Instance.Player1Jump
+            .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player2Jump)
+            .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player3Jump)
+            .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player4Jump)
+            .Subscribe(_ =>
+            {
+                if(gameover)
+                {
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Arena");
+                }
+            })
+            .AddTo(this);
+
+        Assets.Scripts.InputHandlerSingleton.Instance.Player1Attack
+            .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player2Attack)
+            .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player3Attack)
+            .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player4Attack)
+            .Subscribe(_ =>
+            {
+                if (gameover)
+                {
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+                }
+            })
+            .AddTo(this);
 
 
     }
@@ -86,6 +113,7 @@ public class GameManager : MonoBehaviour
     private void RunGameOverSequence()
     {
         Debug.Log("GAME OVER ASDJFKLSDJFFDJSKLDSFKJLDSFJLK");
+        gameover = true;
     }
 
 }
