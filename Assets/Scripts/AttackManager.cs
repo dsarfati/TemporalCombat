@@ -32,14 +32,17 @@ public class AttackManager : MonoBehaviour
     }
     void AttackStart()
     {
-        print("Attack");
-        if (_isAttacking)
-            return;
+        if(this != null)
+        {
+            print("Attack");
+            if (_isAttacking)
+                return;
 
-        this.gameObject.SetActive(true);
-        this._isAttacking = true;
+            this.gameObject.SetActive(true);
+            this._isAttacking = true;
 
-        Observable.TimerFrame(_attackFrames).Subscribe(_ => AttackComplete()).AddTo(this);
+            Observable.TimerFrame(_attackFrames).Subscribe(_ => AttackComplete()).AddTo(this);
+        }
     }
 
     void AttackComplete()
