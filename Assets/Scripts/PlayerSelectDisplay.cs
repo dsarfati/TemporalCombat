@@ -38,9 +38,12 @@ public class PlayerSelectDisplay : MonoBehaviour
 
     private Helmet _selectedHelmet = Helmet.Hair;
 
+    private HelmetManager _helmetManager;
+
     void Start()
     {
         _character = Instantiate(_animatedCharacter, transform.position, Quaternion.identity, transform);
+        _helmetManager = GetComponentInChildren<HelmetManager>();
         ConnectToEvents();
     }
 
@@ -49,6 +52,8 @@ public class PlayerSelectDisplay : MonoBehaviour
         _joinText.SetActive(false);
         _selectText.SetActive(false);
         _readyText.SetActive(false);
+
+        _joinText.
 
         foreach (var arrow in _arrows)
         {
@@ -150,6 +155,11 @@ public class PlayerSelectDisplay : MonoBehaviour
                 _selectedHelmet = (Helmet)newIndex;
 
                 print("New Helmet " + _selectedHelmet);
+
+                _helmetManager.SetHelmet(_selectedHelmet);
+
+                print(_playerNumber);
+                PlayerSelectManager.Helmets[_playerNumber] = _selectedHelmet;
 
 
 

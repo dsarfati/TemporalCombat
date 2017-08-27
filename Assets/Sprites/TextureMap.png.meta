@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 371ca68cb1eab4a1ab80c3a065b4ea42
-timeCreated: 1503866729
+timeCreated: 1503873234
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -21,6 +21,11 @@ TextureImporter:
     21300028: Mouth_Open
     21300030: TextureMap_1
     21300032: TextureMap_2
+    21300034: Viking_Helmet
+    21300036: TextureMap_4
+    21300038: Skull
+    21300040: Mohawk
+    21300042: Knight
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -234,7 +239,7 @@ TextureImporter:
         width: 97.919235
         height: 85.15155
       alignment: 9
-      pivot: {x: 0.5046938, y: 0.5243774}
+      pivot: {x: 0.8201003, y: 0.3842267}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -271,7 +276,7 @@ TextureImporter:
       name: Eyebrow_Left
       rect:
         serializedVersion: 2
-        x: 96
+        x: 113
         y: 322
         width: 26
         height: 13
@@ -285,9 +290,9 @@ TextureImporter:
       name: Eyebrow_Right
       rect:
         serializedVersion: 2
-        x: 137
+        x: 154
         y: 323
-        width: 15
+        width: 16
         height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -299,9 +304,9 @@ TextureImporter:
       name: Mouth_Open
       rect:
         serializedVersion: 2
-        x: 73
-        y: 315
-        width: 11
+        x: 168
+        y: 305
+        width: 12
         height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -318,7 +323,7 @@ TextureImporter:
         width: 119
         height: 74
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -332,7 +337,77 @@ TextureImporter:
         width: 22
         height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Viking_Helmet
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 106
+        width: 113
+        height: 89
+      alignment: 9
+      pivot: {x: 0.7917803, y: 0.28486136}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: TextureMap_4
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 195
+        width: 1
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Skull
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 125
+        width: 66
+        height: 65
+      alignment: 9
+      pivot: {x: 0.9148483, y: 0.52950674}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Mohawk
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 123
+        width: 79
+        height: 82
+      alignment: 9
+      pivot: {x: 0.791524, y: 0.2274157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Knight
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 126
+        width: 93
+        height: 98
+      alignment: 9
+      pivot: {x: 0.919618, y: 0.30174613}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

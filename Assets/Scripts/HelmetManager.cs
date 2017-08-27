@@ -13,5 +13,7 @@ public class HelmetManager : MonoBehaviour
     public void SetHelmet(Helmet helmetType)
     {
         print("Setting helmet to " + helmetType);
+
+        _helmet.sprite = _sprites[(int)helmetType];
     }
 }

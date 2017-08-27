@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 4347604605636932}
   - component: {fileID: 212686081305088656}
   m_Layer: 0
-  m_Name: Hair_Normal
+  m_Name: Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -634,7 +634,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1344762950201784}
   m_LocalRotation: {x: -0, y: -0, z: -0.04934082, w: 0.99878204}
-  m_LocalPosition: {x: 0.009, y: 0.125, z: 0}
+  m_LocalPosition: {x: 0.252, y: -0.001, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_Children: []
   m_Father: {fileID: 4555934500329818}
@@ -1087,8 +1087,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2648988bbfac4a799086a9945cf6880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _helmet: {fileID: 0}
-  _sprites: []
+  _helmet: {fileID: 212686081305088656}
+  _sprites:
+  - {fileID: 21300006, guid: 371ca68cb1eab4a1ab80c3a065b4ea42, type: 3}
+  - {fileID: 21300034, guid: 371ca68cb1eab4a1ab80c3a065b4ea42, type: 3}
+  - {fileID: 21300042, guid: 371ca68cb1eab4a1ab80c3a065b4ea42, type: 3}
+  - {fileID: 21300038, guid: 371ca68cb1eab4a1ab80c3a065b4ea42, type: 3}
+  - {fileID: 21300040, guid: 371ca68cb1eab4a1ab80c3a065b4ea42, type: 3}
 --- !u!114 &114387335634308550
 MonoBehaviour:
   m_ObjectHideFlags: 1
