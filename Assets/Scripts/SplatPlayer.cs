@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
+using System;
+
 
 public class SplatPlayer : MonoBehaviour {
 
     public GameObject giblets;
+    public float restartDelay = 1500f;
 	// Use this for initialization
 	void Start () {
         var trigger = this.GetComponent<ObservableTrigger2DTrigger>();
@@ -17,7 +20,7 @@ public class SplatPlayer : MonoBehaviour {
             {
                 if(coll.gameObject.tag == "Character")
                 {
-                    Instantiate(giblets, coll.transform.position, Quaternion.identity);
+                    Instantiate(giblets, coll.transform.position + new Vector3(0, 0, -1.5f), Quaternion.identity);
                 }
                 Destroy(coll.gameObject);
                 Debug.Log(gameObject.name + " Colliding(gameover) with " + coll.gameObject.name);
@@ -32,7 +35,8 @@ public class SplatPlayer : MonoBehaviour {
                     this.Send(new PositionUpdate(camTarget + new Vector3(-5, 0, 0), Vector3.zero));
                 }
 
-                Assets.Scripts.InputHandlerSingleton.Instance.Player1Jump
+                Observable.Timer(TimeSpan.FromMilliseconds(restartDelay)).Subscribe(x => {
+                    Assets.Scripts.InputHandlerSingleton.Instance.Player1Jump
                 .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player2Jump)
                 .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player3Jump)
                 .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player4Jump)
@@ -42,16 +46,19 @@ public class SplatPlayer : MonoBehaviour {
                 })
                 .AddTo(this);
 
-                Assets.Scripts.InputHandlerSingleton.Instance.Player1Attack
-                    .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player2Attack)
-                    .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player3Attack)
-                    .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player4Attack)
-                    .Where(i=> i != 0)
-                    .Subscribe(_ =>
-                    {
-                        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
-                    })
-                    .AddTo(this);
+                    Assets.Scripts.InputHandlerSingleton.Instance.Player1Attack
+                        .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player2Attack)
+                        .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player3Attack)
+                        .Merge(Assets.Scripts.InputHandlerSingleton.Instance.Player4Attack)
+                        .Where(i => i != 0)
+                        .Subscribe(_ =>
+                        {
+                            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+                        })
+                        .AddTo(this);
+                }).AddTo(this);
+
+                
 
 
             }).AddTo(this);
