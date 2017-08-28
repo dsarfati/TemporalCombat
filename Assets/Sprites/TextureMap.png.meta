@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 371ca68cb1eab4a1ab80c3a065b4ea42
-timeCreated: 1503881241
-licenseType: Pro
+timeCreated: 1503878675
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Platform_Right
@@ -26,8 +26,10 @@ TextureImporter:
     21300038: Skull
     21300040: Mohawk
     21300042: Knight
-    21300044: TextureMap_3
-    21300046: TextureMap_5
+    21300044: Axe
+    21300046: Machete
+    21300048: Buzz
+    21300050: SwordFish
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -254,8 +256,8 @@ TextureImporter:
         y: 204
         width: 77
         height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.0800293, y: 0.47150955}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -415,29 +417,57 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TextureMap_3
+      name: Axe
       rect:
         serializedVersion: 2
-        x: 15
-        y: 79
-        width: 141
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 357
+        y: 243
+        width: 67
+        height: 24
+      alignment: 9
+      pivot: {x: 0.0934717, y: 0.56748074}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: TextureMap_5
+      name: Machete
       rect:
         serializedVersion: 2
-        x: 77
-        y: 27
+        x: 354
+        y: 300
+        width: 72
+        height: 16
+      alignment: 9
+      pivot: {x: 0.11464521, y: 0.6835003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Buzz
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 339
         width: 77
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 28
+      alignment: 9
+      pivot: {x: 0.086285874, y: 0.51572853}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SwordFish
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 381
+        width: 124
+        height: 40
+      alignment: 9
+      pivot: {x: 0.059924465, y: 0.51643676}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
