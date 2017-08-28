@@ -374,6 +374,7 @@ MonoBehaviour:
   _arrows:
   - {fileID: 1842128332911918}
   - {fileID: 1994717129076314}
+  palette: {fileID: 11400000, guid: 782cb46d2888b5949bcd74872bdc4d93, type: 2}
 --- !u!212 &212437216487851966
 SpriteRenderer:
   m_ObjectHideFlags: 1
