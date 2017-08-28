@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6194995d8e9d70b4e9c029aa490781fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelToLoad: Forest
+  LevelToLoad: Arena
 --- !u!1001 &972269362
 Prefab:
   m_ObjectHideFlags: 0
