@@ -410,7 +410,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   sizeMin: 1.1547738
   sizeMax: 1.1547738
-  scale: 1
+  scale: 0.75
   initialRotationMin: 0
   initialRotationMax: 0
   separateRotationAxes: 0
@@ -929,7 +929,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 4585691576134044}
   sourceTransforms:
   - transform: {fileID: 4585691576134044}
-    instanceID: 18730
+    instanceID: -382330
     available: 1
     position: {x: 0, y: 0, z: 0}
     localPosition: {x: 0, y: 0, z: 0}
@@ -1126,7 +1126,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 8122
+  _randomSeed: 1319
   randomSeedOnEnable: 1
 --- !u!114 &114047827149731906
 MonoBehaviour:
@@ -1176,7 +1176,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   sizeMin: 0.7527638
   sizeMax: 0.7527638
-  scale: 1
+  scale: 0.75
   initialRotationMin: 0
   initialRotationMax: 0
   separateRotationAxes: 0
@@ -1695,7 +1695,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 4089532385924780}
   sourceTransforms:
   - transform: {fileID: 4089532385924780}
-    instanceID: 18804
+    instanceID: -382332
     available: 1
     position: {x: 0, y: 0, z: 0}
     localPosition: {x: 0, y: 0, z: 0}
@@ -1892,7 +1892,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 3983
+  _randomSeed: 4682
   randomSeedOnEnable: 1
 --- !u!114 &114283407649055454
 MonoBehaviour:
@@ -2366,9 +2366,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   threadMethod: 0
   multithreadedStartup: 1
-  scriptedEmissionIndex: 12
-  scriptedEmissionPosition: {x: 4.338264, y: 0.2139961, z: 0.23558006}
-  scriptedEmissionVelocity: {x: 1.7344604, y: -2.6872544, z: -0.0377487}
+  scriptedEmissionIndex: 0
+  scriptedEmissionPosition: {x: -21.908148, y: -31.596344, z: 0.9801098}
+  scriptedEmissionVelocity: {x: -3.068742, y: -12.954054, z: -0.07107762}
   scriptedEmissionColor: {r: 1, g: 0, b: 0, a: 1}
   collision: 0
   affectRigidbodies: 1
@@ -2639,7 +2639,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 2076
+  _randomSeed: 6273
   randomSeedOnEnable: 1
 --- !u!114 &114406863882792732
 MonoBehaviour:
@@ -3208,7 +3208,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 4418794347375482}
   sourceTransforms:
   - transform: {fileID: 4418794347375482}
-    instanceID: 18772
+    instanceID: -382324
     available: 1
     position: {x: 0, y: 0, z: 0}
     localPosition: {x: 0, y: 0, z: 0}
@@ -3385,7 +3385,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 8899
+  _randomSeed: 366
   randomSeedOnEnable: 1
 --- !u!114 &114645395256206322
 MonoBehaviour:
@@ -3859,9 +3859,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   threadMethod: 0
   multithreadedStartup: 1
-  scriptedEmissionIndex: 27
-  scriptedEmissionPosition: {x: -0.02164381, y: 2.3592205, z: 1.0399878}
-  scriptedEmissionVelocity: {x: 0.045125596, y: -0.9234234, z: 0.5462235}
+  scriptedEmissionIndex: 5
+  scriptedEmissionPosition: {x: 9.388437, y: -34.204468, z: 2.6675026}
+  scriptedEmissionVelocity: {x: 1.679585, y: -13.338404, z: 0.46984965}
   scriptedEmissionColor: {r: 1, g: 0, b: 0, a: 1}
   collision: 0
   affectRigidbodies: 1
@@ -4132,7 +4132,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 3536
+  _randomSeed: 8990
   randomSeedOnEnable: 1
 --- !u!114 &114830005190806556
 MonoBehaviour:
@@ -4182,7 +4182,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   sizeMin: 0.7527638
   sizeMax: 0.7527638
-  scale: 1
+  scale: 0.75
   initialRotationMin: 0
   initialRotationMax: 0
   separateRotationAxes: 0
@@ -4701,7 +4701,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 4219255788311696}
   sourceTransforms:
   - transform: {fileID: 4219255788311696}
-    instanceID: 18740
+    instanceID: -382336
     available: 1
     position: {x: 0, y: 0, z: 0}
     localPosition: {x: 0, y: 0, z: 0}
@@ -4898,7 +4898,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 1924
+  _randomSeed: 46
   randomSeedOnEnable: 1
 --- !u!114 &114839196684226472
 MonoBehaviour:
@@ -5372,9 +5372,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   threadMethod: 0
   multithreadedStartup: 1
-  scriptedEmissionIndex: 8
-  scriptedEmissionPosition: {x: -2.1462624, y: 1.7483493, z: 0.3337022}
-  scriptedEmissionVelocity: {x: -1.0712934, y: -1.6598694, z: -0.35352516}
+  scriptedEmissionIndex: 28
+  scriptedEmissionPosition: {x: -9.506481, y: -36.628433, z: 3.1419868}
+  scriptedEmissionVelocity: {x: -1.4904802, y: -14.20039, z: 0.695863}
   scriptedEmissionColor: {r: 1, g: 0, b: 0, a: 1}
   collision: 0
   affectRigidbodies: 1
@@ -5645,7 +5645,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 2489
+  _randomSeed: 2073
   randomSeedOnEnable: 1
 --- !u!114 &114842503128572124
 MonoBehaviour:
@@ -5695,7 +5695,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   sizeMin: 0.7527638
   sizeMax: 0.7527638
-  scale: 1
+  scale: 0.75
   initialRotationMin: 0
   initialRotationMax: 0
   separateRotationAxes: 0
@@ -6214,7 +6214,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 4623867575217916}
   sourceTransforms:
   - transform: {fileID: 4623867575217916}
-    instanceID: 18786
+    instanceID: -382328
     available: 1
     position: {x: 0, y: 0, z: 0}
     localPosition: {x: 0, y: 0, z: 0}
@@ -6411,7 +6411,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 9170
+  _randomSeed: 9596
   randomSeedOnEnable: 1
 --- !u!114 &114925294239096200
 MonoBehaviour:
@@ -6885,9 +6885,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   threadMethod: 0
   multithreadedStartup: 1
-  scriptedEmissionIndex: 2
-  scriptedEmissionPosition: {x: -5.748526, y: 2.3645842, z: 0.41414198}
-  scriptedEmissionVelocity: {x: -2.8599625, y: -1.3034064, z: 0.17737117}
+  scriptedEmissionIndex: 22
+  scriptedEmissionPosition: {x: -15.931002, y: -30.810843, z: 4.0217123}
+  scriptedEmissionVelocity: {x: -2.4656377, y: -12.794446, z: 0.4535212}
   scriptedEmissionColor: {r: 1, g: 0, b: 0, a: 1}
   collision: 0
   affectRigidbodies: 1
@@ -7158,7 +7158,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 7711
+  _randomSeed: 8434
   randomSeedOnEnable: 1
 --- !u!114 &114947778988744744
 MonoBehaviour:
@@ -7632,9 +7632,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   threadMethod: 0
   multithreadedStartup: 1
-  scriptedEmissionIndex: 25
-  scriptedEmissionPosition: {x: 5.7788296, y: 1.4768287, z: 0.06725253}
-  scriptedEmissionVelocity: {x: 2.3251967, y: -1.6328101, z: -0.10326065}
+  scriptedEmissionIndex: 3
+  scriptedEmissionPosition: {x: -14.95555, y: -35.507854, z: -1.4724474}
+  scriptedEmissionVelocity: {x: -2.1531518, y: -13.549037, z: -0.58278364}
   scriptedEmissionColor: {r: 1, g: 0, b: 0, a: 1}
   collision: 0
   affectRigidbodies: 1
@@ -7905,7 +7905,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 5609
+  _randomSeed: 962
   randomSeedOnEnable: 1
 --- !u!114 &114970704292234510
 MonoBehaviour:
@@ -7955,7 +7955,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   sizeMin: 0.7527638
   sizeMax: 0.7527638
-  scale: 1
+  scale: 0.75
   initialRotationMin: 0
   initialRotationMax: 0
   separateRotationAxes: 0
@@ -8474,7 +8474,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 4292724200362154}
   sourceTransforms:
   - transform: {fileID: 4292724200362154}
-    instanceID: 18750
+    instanceID: -382334
     available: 1
     position: {x: 0, y: 0, z: 0}
     localPosition: {x: 0, y: 0, z: 0}
@@ -8671,7 +8671,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 3836
+  _randomSeed: 5881
   randomSeedOnEnable: 1
 --- !u!198 &198028242620604742
 ParticleSystem:
@@ -8732,7 +8732,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1171636350
+  randomSeed: 1531186618
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -11994,7 +11994,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1589860226
+  randomSeed: 780232659
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -15256,7 +15256,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 39635511
+  randomSeed: -2025958960
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -18518,7 +18518,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1134955848
+  randomSeed: -25664896
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -21780,7 +21780,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1527797332
+  randomSeed: 7973676
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -25042,7 +25042,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1166300647
+  randomSeed: 1424938401
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -28304,7 +28304,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -123039617
+  randomSeed: -897507058
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -31566,7 +31566,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -912926662
+  randomSeed: 1712656282
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -34828,7 +34828,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1008930274
+  randomSeed: -824310606
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -38090,7 +38090,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1361474709
+  randomSeed: 1148492136
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -41295,7 +41295,7 @@ ParticleSystem:
         m_RotationOrder: 4
 --- !u!198 &198948767242418716
 ParticleSystem:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149363814728828}
@@ -41352,7 +41352,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1176442000
+  randomSeed: 1654879116
   InitialModule:
     serializedVersion: 3
     enabled: 1

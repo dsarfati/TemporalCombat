@@ -478,35 +478,35 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 198522335985987492, guid: b05b6109bd587be4fad01deafc3eee7f,
-        type: 2}
-      propertyPath: randomSeed
-      value: 1419461882
-      objectReference: {fileID: 0}
-    - target: {fileID: 114863458706525404, guid: b05b6109bd587be4fad01deafc3eee7f,
-        type: 2}
-      propertyPath: _randomSeed
-      value: 5236
-      objectReference: {fileID: 0}
-    - target: {fileID: 114054851093784988, guid: b05b6109bd587be4fad01deafc3eee7f,
-        type: 2}
-      propertyPath: _randomSeed
-      value: 364
-      objectReference: {fileID: 0}
     - target: {fileID: 198207327550862044, guid: b05b6109bd587be4fad01deafc3eee7f,
         type: 2}
       propertyPath: randomSeed
-      value: 1153701078
-      objectReference: {fileID: 0}
-    - target: {fileID: 114848243956991818, guid: b05b6109bd587be4fad01deafc3eee7f,
-        type: 2}
-      propertyPath: _randomSeed
-      value: 7444
+      value: 2100949307
       objectReference: {fileID: 0}
     - target: {fileID: 198868631721712804, guid: b05b6109bd587be4fad01deafc3eee7f,
         type: 2}
       propertyPath: randomSeed
-      value: -831392583
+      value: -1800386953
+      objectReference: {fileID: 0}
+    - target: {fileID: 114054851093784988, guid: b05b6109bd587be4fad01deafc3eee7f,
+        type: 2}
+      propertyPath: _randomSeed
+      value: 7441
+      objectReference: {fileID: 0}
+    - target: {fileID: 114863458706525404, guid: b05b6109bd587be4fad01deafc3eee7f,
+        type: 2}
+      propertyPath: _randomSeed
+      value: 9075
+      objectReference: {fileID: 0}
+    - target: {fileID: 114848243956991818, guid: b05b6109bd587be4fad01deafc3eee7f,
+        type: 2}
+      propertyPath: _randomSeed
+      value: 7784
+      objectReference: {fileID: 0}
+    - target: {fileID: 198522335985987492, guid: b05b6109bd587be4fad01deafc3eee7f,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1011710998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b05b6109bd587be4fad01deafc3eee7f, type: 2}
@@ -3308,7 +3308,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 7769
+  _randomSeed: 4343
   randomSeedOnEnable: 1
 --- !u!199 &1410908531
 ParticleSystemRenderer:
@@ -3421,7 +3421,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -912051265
+  randomSeed: 573817577
   InitialModule:
     serializedVersion: 3
     enabled: 1
