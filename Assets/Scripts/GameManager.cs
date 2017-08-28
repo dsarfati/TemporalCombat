@@ -111,8 +111,7 @@ public class GameManager : MonoBehaviour
                             this.Send(new PositionUpdate(camTarget + new Vector3(-5, 0, 0), Vector3.zero));
                         }
                         spawnPos.y = 10;
-                        boulder.transform.position = spawnPos;
-                        boulder.SetActive(true);
+                        Instantiate(boulder, spawnPos, Quaternion.identity);
                     }
                     else
                     {

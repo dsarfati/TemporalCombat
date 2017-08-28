@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Jump
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 1709d42c4ae3cad4fbf5dc5f8330a59d, type: 3}
+  - {fileID: 8300000, guid: 098c1e18c70c2ca44aa20dc884de9037, type: 3}
   volume:
     minValue: 0.3190184
     maxValue: 0.5398773

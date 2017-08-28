@@ -41295,7 +41295,7 @@ ParticleSystem:
         m_RotationOrder: 4
 --- !u!198 &198948767242418716
 ParticleSystem:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149363814728828}
