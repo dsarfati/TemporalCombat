@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114144465249958396}
   - component: {fileID: 137219101041694302}
   m_Layer: 0
-  m_Name: Leg
+  m_Name: Leg R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 114116033223047158}
   - component: {fileID: 137598382660409020}
   m_Layer: 0
-  m_Name: Leg
+  m_Name: Leg L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UniRx;
+using Anima2D;
 
 public class CharacterManager : MonoBehaviour
 {
@@ -52,6 +53,8 @@ public class CharacterManager : MonoBehaviour
             }
 
             characterObj.transform.FindDeepChild("Body").GetComponent<SpriteRenderer>().color = characterColor;
+            characterObj.transform.FindDeepChild("Leg L").GetComponent<SpriteMeshInstance>().color = characterColor;
+            characterObj.transform.FindDeepChild("Leg R").GetComponent<SpriteMeshInstance>().color = characterColor;
         }
 
         var characters = GetComponentsInChildren<Character>();
