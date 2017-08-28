@@ -881,7 +881,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 7986
+  _randomSeed: 7777
   randomSeedOnEnable: 1
 --- !u!114 &114329878608942590
 MonoBehaviour:
@@ -1514,7 +1514,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 4003639563748372}
   sourceTransforms:
   - transform: {fileID: 4003639563748372}
-    instanceID: -616052
+    instanceID: -171314
     available: 1
     position: {x: 0.54, y: -5.66, z: 0}
     localPosition: {x: 0, y: 0, z: 0}
@@ -1711,7 +1711,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 3294
+  _randomSeed: 5200
   randomSeedOnEnable: 1
 --- !u!114 &114863458706525404
 MonoBehaviour:
@@ -2185,9 +2185,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   threadMethod: 0
   multithreadedStartup: 1
-  scriptedEmissionIndex: 0
-  scriptedEmissionPosition: {x: 6.83535, y: -4.1035357, z: 0.20146853}
-  scriptedEmissionVelocity: {x: 0.37605706, y: -2.3175726, z: -0.7088884}
+  scriptedEmissionIndex: 6
+  scriptedEmissionPosition: {x: 8.481702, y: -3.7497814, z: 0.8353001}
+  scriptedEmissionVelocity: {x: 0.13090685, y: 0.12198201, z: 0.16733637}
   scriptedEmissionColor: {r: 1, g: 0.8039216, b: 0, a: 1}
   collision: 0
   affectRigidbodies: 1
@@ -2458,7 +2458,7 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  _randomSeed: 6480
+  _randomSeed: 838
   randomSeedOnEnable: 1
 --- !u!198 &198207327550862044
 ParticleSystem:
@@ -2519,7 +2519,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1646626360
+  randomSeed: -2013176962
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5781,7 +5781,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1250484241
+  randomSeed: -1336219517
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9043,7 +9043,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1024138202
+  randomSeed: -1904300142
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -12383,7 +12383,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0

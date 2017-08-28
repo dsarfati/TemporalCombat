@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
+using UniRx.Triggers;
 
 public class AttackManager : MonoBehaviour
 {
@@ -12,8 +13,14 @@ public class AttackManager : MonoBehaviour
     [SerializeField] private SpriteRenderer swoosh;
 
     public AudioEvent attackSfx;
+    public AudioEvent hitSfx;
+
+    private AudioSource attackSrc;
+    private AudioSource hitSrc;
     void Awake()
     {
+        attackSrc = GetComponent<AudioSource>();
+        hitSrc = GetComponentInChildren<AudioSource>();
         //Assumes the starting position is on the left side of the character
         var startPosition = transform.localPosition.x;
 
@@ -31,7 +38,22 @@ public class AttackManager : MonoBehaviour
 
         player.transform.Receive<AttackInput>().Where(_ => character.IsActive).Subscribe(_ => AttackStart()).AddTo(this);
 
+
+
         AttackComplete();
+
+        var trigger = this.GetComponent<ObservableTrigger2DTrigger>();
+        var stayTrigger = trigger.OnTriggerStay2DAsObservable();
+
+        trigger
+            .OnTriggerEnter2DAsObservable()
+            .Merge(stayTrigger)
+            .Where(coll => coll.gameObject.layer == LayerMask.NameToLayer("PlayerHurtbox")) //in case we use triggers for other things
+            .Subscribe(coll =>
+            {
+                Debug.Log("BLERJSKLDFJKLDS");
+                hitSfx.Play(hitSrc);
+            }).AddTo(this);
     }
     void AttackStart()
     {
@@ -43,7 +65,7 @@ public class AttackManager : MonoBehaviour
 
             this.gameObject.SetActive(true);
             this._isAttacking = true;
-            attackSfx.Play(GetComponent<AudioSource>());
+            attackSfx.Play(attackSrc);
 
             Observable.TimerFrame(_attackFrames).Subscribe(_ => AttackComplete()).AddTo(this);
         }
