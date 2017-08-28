@@ -10,6 +10,7 @@ public class SplatPlayer : MonoBehaviour {
 
     public GameObject giblets;
     public float restartDelay = 1500f;
+    public AudioEvent hitSfx;
 	// Use this for initialization
 	void Start () {
         var trigger = this.GetComponent<ObservableTrigger2DTrigger>();
@@ -18,6 +19,7 @@ public class SplatPlayer : MonoBehaviour {
             .Where(coll => coll.gameObject.tag == "Character" || coll.gameObject.tag == "Ground") //in case we use triggers for other things
             .Subscribe(coll =>
             {
+                hitSfx.Play(GetComponent<AudioSource>());
                 if(coll.gameObject.tag == "Character")
                 {
                     Instantiate(giblets, coll.transform.position + new Vector3(0, 0, -1.5f), Quaternion.identity);
