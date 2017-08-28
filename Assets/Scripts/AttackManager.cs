@@ -10,6 +10,8 @@ public class AttackManager : MonoBehaviour
 
     private bool _isAttacking = false;
     [SerializeField] private SpriteRenderer swoosh;
+
+    public AudioEvent attackSfx;
     void Awake()
     {
         //Assumes the starting position is on the left side of the character
@@ -41,6 +43,7 @@ public class AttackManager : MonoBehaviour
 
             this.gameObject.SetActive(true);
             this._isAttacking = true;
+            attackSfx.Play(GetComponent<AudioSource>());
 
             Observable.TimerFrame(_attackFrames).Subscribe(_ => AttackComplete()).AddTo(this);
         }

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a9f940313d06d4caed9863bf024ebf, type: 3}
+  m_Name: AttackSwish
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: bd2161a699ba4584eab58a86fdc44f9d, type: 3}
+  volume:
+    minValue: 0.9141104
+    maxValue: 1
+  pitch:
+    minValue: 0.9202454
+    maxValue: 1.202454
