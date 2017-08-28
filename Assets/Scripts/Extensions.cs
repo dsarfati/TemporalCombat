@@ -32,7 +32,7 @@ public static class Extensions
         foreach (var mesh in meshes)
         {
             mesh.sharedMaterial = mat;
-            mesh.color = mat.color;
+            // mesh.color = mat.color;
         }
     }
 
