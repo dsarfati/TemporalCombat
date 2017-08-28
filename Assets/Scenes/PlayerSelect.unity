@@ -354,7 +354,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6194995d8e9d70b4e9c029aa490781fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelToLoad: Arena
+  LevelToLoad: Forest
 --- !u!1001 &972269362
 Prefab:
   m_ObjectHideFlags: 0

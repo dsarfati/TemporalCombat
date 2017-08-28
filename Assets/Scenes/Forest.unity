@@ -1713,7 +1713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1809056771917034, guid: 9b6250fa473d88843a511d8e2988ba21, type: 2}
   hud: {fileID: 693377947}
-  boulder: {fileID: 0}
+  boulder: {fileID: 1787263583764270, guid: 66174ded0fb1a4449b00f16d016214f2, type: 2}
 --- !u!4 &1352705047
 Transform:
   m_ObjectHideFlags: 0
