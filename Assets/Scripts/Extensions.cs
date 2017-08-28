@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Anima2D;
 using UnityEngine;
 
 public static class Extensions
@@ -32,8 +33,16 @@ public static class Extensions
         foreach (var mesh in meshes)
         {
             mesh.sharedMaterial = mat;
-            // mesh.color = mat.color;
+            // if (mat.color != Color.white)
+            mesh.color = mat.color;
         }
+    }
+
+    public static void SetColor(this GameObject go, Color color)
+    {
+        go.transform.FindDeepChild("Body").GetComponent<SpriteRenderer>().color = color;
+        go.transform.FindDeepChild("Leg L").GetComponent<SpriteMeshInstance>().color = color;
+        go.transform.FindDeepChild("Leg R").GetComponent<SpriteMeshInstance>().color = color;
     }
 
 

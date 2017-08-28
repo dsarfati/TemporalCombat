@@ -32,6 +32,10 @@ public class PlayerSelectDisplay : MonoBehaviour
     [SerializeField]
     private GameObject[] _arrows;
 
+
+    [SerializeField]
+    private ColorSet palette;
+
     private PlayerSelectManager _selectionMgr;
 
     private GameObject _character;
@@ -106,6 +110,8 @@ public class PlayerSelectDisplay : MonoBehaviour
             else
             {
                 _character.SetMaterial(_readyMaterial);
+
+                _character.SetColor(palette.HUDColors[_playerNumber]);
 
                 //Selecting character
                 if (i == 1)

@@ -52,9 +52,7 @@ public class CharacterManager : MonoBehaviour
                 buttonTitle.color = characterColor;
             }
 
-            characterObj.transform.FindDeepChild("Body").GetComponent<SpriteRenderer>().color = characterColor;
-            characterObj.transform.FindDeepChild("Leg L").GetComponent<SpriteMeshInstance>().color = characterColor;
-            characterObj.transform.FindDeepChild("Leg R").GetComponent<SpriteMeshInstance>().color = characterColor;
+            characterObj.SetColor(characterColor);
         }
 
         var characters = GetComponentsInChildren<Character>();
